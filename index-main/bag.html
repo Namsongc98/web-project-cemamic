@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="/fontawesome-free-6.3.0-web/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/file-css/main.css" />
+    <link rel="stylesheet" href="/assets/file-css/base.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-wapper">
+        <div class="header-wapper__logo">
+          <img src="/assets/" alt="" class="header-wapper__logo" />
+          <h3 class="title-logo">Phương Anh</h3>
+        </div>
+        <nav class="header-nav">
+          <ul class="header-nav__list">
+            <li class="header-nav__item">
+              <a href="" class="header-nav__link">Trang chủ</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="./index.html" class="header-nav__link">Menu</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="" class="header-nav__link">Kết nối</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="" class="header-nav__link">Event & New</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__right">
+          <div class="header__wpSearch">
+            <input
+              type="text"
+              class="header__search"
+              placeholder="Nhập sản phẩm bạn muốn tìm"
+            />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <i class="fa-regular fa-user"></i>
+          <a href="./index-bag.html" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="main-left">
+        <h3 class="product-tite" id="quantity">Giỏ hàng của bạn</h3>
+        <p class="product-quantity" id="quantity">bạn đang có số sản phẩm là</p>
+        <div class="conainer-product" id="container-product">
+          <div class="product-bag">
+            <img
+              src="/assets/img-web-gom/binh-hoa-rong.jpg"
+              alt=""
+              class="img-bag"
+            />
+            
+            <div>
+              <h3 class="name-product">ten</h3>
+              <p class="spice-product">tiên</p>
+            </div>
+          </div>
+          <div class="bag-button-wp">
+            <button class="bag-button" onclick="buttonMin()">-</button>
+            <span class="product-number"> sl</span>
+            <button class="bag-button" onclick="buttonPlus()">+</button>
+          </div>
+          <div class="bag-right">
+            <span class="total">tiền </span>
+            <button class="delete" id="delete" onclick="erase()" >xóa</button>
+          </div>
+        </div>
+      </div>
+      <div class="main-right">
+        <div class="wpProduct" id="wpProductBag"></div>
+      </div>
+    </main>
+    <script src="/assets/file-js/bag-product.js"></script>
+    
+  </body>
+</html>

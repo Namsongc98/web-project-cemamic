@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/file-css/style-sign.css" />
+    <link
+      rel="stylesheet"
+      href="/fontawesome-free-6.3.0-web/css/all.min.css"
+    />
+    <title>Sign-up</title>
+  </head>
+  <style>
+    body {
+      background-image: url(/assets/img-web-gom/bacground-form.jpg);
+    }
+  </style>
+  <body>
+    <div class="signUp__wp">
+      <form action="">
+        <h1 class="title">Đăng ký</h1>
+        <div class="wp-userName">
+          <label for="">Họ</label>
+          <input type="text" class="fistname" id="fistName" />
+          <label for="" class="label__lastname">Tên</label>
+          <input type="text" class="lastname" id="lastName" />
+        </div>
+        <div class="signUp__wp-email">
+          <label for="" class="signUp__label-email">Email</label>
+          <input
+            type="email"
+            class="signUp__email-input"
+            id="signUp__email-input"
+          />
+        </div>
+        <div class="signUp__wp-password">
+          <label for="" class="signUp__label-password">Password</label>
+          <input
+            type="password"
+            class="signUp__password-input"
+            id="signUp__password-input"
+          />
+          <i
+            class="fa-solid fa-eye-slash "
+            onclick="eyeSignUp(event)"
+            id="eye-signUp"
+          ></i>
+        </div>
+        <div class="signUp__wp-password">
+          <label for="" class="signUp__label-password">Password</label>
+          <input
+            type="password"
+            class="signUp__password-input"
+            id="password-input-again"
+          />
+          <i
+            class="fa-solid fa-eye-slash"
+            onclick="eyeSignUpAgain(event)"
+            id="eye-signUp-again"
+          ></i>
+        </div>
+
+        <button
+          onclick="Summit(event)"
+          id="winSignIn"
+          class="Wp-signUp__button"
+        >
+          Xác Nhận
+        </button>
+      </form>
+    </div>
+    <script src="/assets/file-js/sign.js"></script>
+  </body>
+</html>

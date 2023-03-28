@@ -1,0 +1,134 @@
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    background-image: url("");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* phần sign-in */
+.container {
+    width: 400px;
+    height: 450px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 150px auto;
+    border: 1px solid grey;
+    padding: 10px;
+}
+.title {
+    text-align: center;
+    margin: 50px auto 10px auto;
+}
+.text{
+    text-align: center;
+}
+.wp-password,
+.wp-email {
+    width: 95%;
+    height: 40px;
+    border: 1px solid grey;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+.label-password,
+.label-email {
+    display: inline-block;
+    font-size: 16px;
+    min-width: 80px;
+}
+.email-input,
+.password-input {
+    width: 60%;
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+}
+.Sign-in__link{
+    display: inline-block;
+    margin: 0px auto 10px 20px;
+    text-decoration: none;
+}
+.button-sign-in {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    text-decoration: none;
+    color: black;
+}
+.button-sign-in:hover{
+    background-color:rgb(97 40 24);
+    color: white;
+    cursor: pointer;
+}
+/* phần sign-up */
+.signUp__wp {
+   max-width: 450px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 150px auto;
+    border: 1px solid grey;
+    padding: 10px;
+}
+.wp-userName,
+.signUp__wp-email,
+.signUp__wp-password {
+    margin: 15px;
+    width: 95%;
+    height: 40px;
+    border: 1px solid grey;
+    margin: 20px auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+.signUp__label-email,
+.signUp__label-password {
+    display: inline-block;
+    font-size: 16px;
+    min-width: 80px;
+}
+.label__lastname{
+    margin-left: 10px;
+}
+
+.fistname,
+.lastname {
+    width: 150px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid grey;
+}
+.signUp__email-input,
+.signUp__password-input {
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+}
+.Wp-signUp__button{
+    width: 95%;
+    height: 40px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid rgb(97 40 24);
+    text-decoration: none;
+    font-size: 20px;
+    margin: 10px;
+}
+.Wp-signUp__button:hover{
+    background-color:  rgb(97 40 24);
+    color: white;
+}

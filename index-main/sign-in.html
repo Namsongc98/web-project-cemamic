@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="/fontawesome-free-6.3.0-web/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assets/file-css/style-sign.css" />
+
+    <title>Đăng nhập</title>
+  </head>
+  <style>
+    body{
+      background-image:url(/assets/img-web-gom/bacground-form.jpg) ;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <form action="">
+        <h1 class="title">Đăng nhập</h1>
+        <h4 class=" text">Vui lòng nhập thông tin đăng nhập</h4>
+        <div class="wp-email">
+          <label for="" class="label-email">Email</label>
+          <input type="text" class="email-input" id="signIn__email-input" />
+        </div>
+        <div class="wp-password">
+          <label for="" class="label-password">Password</label>
+          <input
+            type="password"
+            class="password-input"
+            id="signIn__password-input"
+          />
+          
+          <i
+            class="fa-solid fa-eye-slash"
+            id="eye-signIn"
+            onclick="eyeSignIn()"
+          ></i>
+        </div>
+        <a href="./index-sign-up.html" target="" class="Sign-in__link">Tạo tài khoản!</a>
+         <button class="button-sign-in"  onclick="impClick(event)"> Nhập </button>
+      </form>
+    </div>
+
+    <script src="/assets/file-js/sign-in.js"></script>
+  </body>
+</html>

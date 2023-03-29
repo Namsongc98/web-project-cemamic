@@ -69,22 +69,16 @@ let products = JSON.parse(localStorage.getItem("listProduct")) ? JSON.parse(loca
 function render() {
   for (let i = 0; i < products.length; i++) {
     let renderPro = `
-        <div class="product-cart">
-                  <img
-                    src="${products[i].image}"
-                     alt=""
-                    class="product-img"
-                  />
-                  <div class="product-info">
-                     <p class="product-name">${products[i].name}</p>
-                     <span class="idProduct">ID: ${i} </span>
-                     <div class="product-info-price">
-                       <span class="product-price">${products[i].price}</span>
-                       <span class="product-cout">${products[i].number}</span>
-                       <button class="product-buy" onclick="buy(${products[i].id})">BUY</button>
-                     </div>
-                 </div>
-                 </div>`
+    <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 15rem;" >
+    <img src="${products[i].image}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">${products[i].name}</h5>
+      <p class="card-text">${i}</p>
+      <p class="card-text">${products[i].price}</p>
+      <button class="btn btn-primary" onclick="buy(${products[i].id})">BUY</button>
+    </div>
+   
+  </div>`
     document.getElementById("wpProduct").innerHTML += renderPro;
   }
 }
@@ -94,15 +88,18 @@ let flag = true;
 function buy(index) {
   if (renderbag == null) {
     renderbag = []
-    renderbag.push(productLocal)
+    renderbag.push( products)
     localStorage.setItem("renderbag ", JSON.stringify(renderbag))
   } else {
+    console.log("vetr")
     if (renderbag.length == "") {
-      for (let i = 0; i < productLocal.length; i++) {
-        if (productLocal[i].id == index) {
-          renderbag.push(productLocal[i]);
-          console.log(productLocal[i])
-          localStorage.setItem("renderbag ", JSON.stringify(renderbag))
+      console.log("vetr")
+      for (let i = 0; i < products.length; i++) {
+        if ( products[i].id == index) {
+          renderbag.push( products[i]);
+          console.log( products[i]);
+          localStorage.setItem("renderbag ", JSON.stringify(renderbag));
+          console.log(renderbag);
         }
       }
     } else {
@@ -114,16 +111,16 @@ function buy(index) {
         }
       }
       if (flag == false) {
-        alert("xác nhận thêm vào")
+        alert("xác nhận thêm vào");
       } else {
-        for (let k = 0; k < productLocal.length; k++) {
-          if (productLocal[k].id == index) {
-            renderbag.push(productLocal[k]);
-            localStorage.setItem(" renderbag ", JSON.stringify(renderbag))
+        for (let k = 0; k <  products.length; k++) {
+          if ( products[k].id == index) {
+            renderbag.push( products[k]);
+            localStorage.setItem(" renderbag ", JSON.stringify(renderbag));
           }
-          break
         }
       }
     }
   }
+  
 }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/fontawesome-free-6.3.0-web/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/file-css/base.css" />
+    <link rel="stylesheet" href="/assets/file-css/main.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/bootstrap-5.3.0-alpha2-dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/assets/file-css/add-min.css" />
+    <title>Phương Anh Gốm Shop</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-wapper">
+        <div class="header-wapper__logo">
+          <img
+            src="/assets/img-web-gom/logo-gom.jpg"
+            alt=""
+            class="header-wapper__logo"
+          />
+          <h5 class="title-logo">Phương Anh</h5>
+        </div>
+        <nav class="header-nav">
+          <ul class="header-nav__list">
+            <li class="header-nav__item">
+              <a href="" class="header-nav__link">Trang chủ</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="" class="header-nav__link">Menu</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="" class="header-nav__link">Kết nối</a>
+            </li>
+            <li class="header-nav__item">
+              <a href="" class="header-nav__link">Event & New</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="header__right">
+          <div class="header__wpSearch">
+            <input
+              type="text"
+              class="header__search"
+              placeholder="Nhập sản phẩm bạn muốn tìm"
+            />
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <i class="fa-regular fa-user"></i>
+          <a
+            href="/index-main/index-bag.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+    <h1 class="title-repo">Kho sản phẩm</h1>
+    <main class="main-prd">
+      <h2 class="product-title">Nhập Sản phẩm</h2>
+      <div class="wp-form">
+        <div class="wp-item">
+          <label for="" class="name-form">Tên sản shẩm</label>
+          <input type="text" class="input-product" id="name-prd" />
+        </div>
+        <div class="wp-item">
+          <label for="" class="name-form">Mã sản shẩm</label>
+          <input type="email" class="input-product" id="id-prd" />
+        </div>
+        <div class="wp-item">
+          <label for="" class="name-form">Giá sản phẩm</label>
+          <input type="password" class="input-product" id="price-prd" />
+        </div>
+        <div class="wp-item">
+          <label for="" class="name-form">số lượng</label>
+          <input type="password" class="input-product" id="prd-nuber" />
+        </div>
+        <div class="wp-item">
+          <label for="image" class="name-form">Chon sản phẩm</label><br>
+          <input type="file" id="image" name="image" class="file-img"  onchange="previewImage(this) "/>
+        </div>
+
+        <button
+          onclick="Summit(event)"
+          id="winSignIn"
+          class="button-product btn btn-info"
+        >
+          Nhập
+        </button>
+
+      </div>
+    </main>
+  </body>
+</html>

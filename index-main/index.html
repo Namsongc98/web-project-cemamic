@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="/fontawesome-free-6.3.0-web/css/all.min.css"
-    />
+    <link rel="stylesheet" href="/fontawesome-free-6.3.0-web/css/all.min.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -21,15 +18,22 @@
     />
     <link rel="stylesheet" href="/assets/file-css/base.css" />
     <link rel="stylesheet" href="/assets/file-css/main.css" />
-    <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha2-dist/css/bootstrap-reboot.min.css">
+    <link
+      rel="stylesheet"
+      href="/assets/bootstrap-5.3.0-alpha2-dist/css/bootstrap.min.css"
+    />
     <title>Phương Anh Gốm Shop</title>
   </head>
   <body>
     <header class="header">
       <div class="header-wapper">
         <div class="header-wapper__logo">
-          <img src="" alt="" class="header-wapper__logo" />
-          <h3 class="title-logo">Phương Anh</h3>
+          <img
+            src="/assets/img-web-gom/logo-gom.jpg"
+            alt=""
+            class="header-wapper__logo"
+          />
+          <h5 class="title-logo">Phương Anh</h5>
         </div>
         <nav class="header-nav">
           <ul class="header-nav__list">
@@ -49,20 +53,90 @@
         </nav>
         <div class="header__right">
           <div class="header__wpSearch">
-            <input type="text" class="header__search" placeholder="Nhập sản phẩm bạn muốn tìm" />
+            <input
+              type="text"
+              class="header__search"
+              placeholder="Nhập sản phẩm bạn muốn tìm"
+            />
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
           <i class="fa-regular fa-user"></i>
-          <a href="/index-main/index-bag.html" target="_blank" rel="noopener noreferrer">
+          <a
+            href="/index-main/bag.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="fa-solid fa-cart-shopping"></i>
           </a>
         </div>
       </div>
-      <img
-        src="/assets/img-web-gom/main-banner-1-1903x975.jpg"
-        alt=""
-        class="banner"
-      />
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="/assets/img-web-gom/main-banner-1-1903x975.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/assets/img-web-gom/main-banner.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/assets/img-web-gom/main-banner-1-1903x975.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
       <p class="header__text">
         Gốm là một loại vật dụng, trong xây dựng công trình, dinh thự và ngay cả
         máng nước, vật gia dụng... đã hơn 25.000 năm, từ sau khi con người phát
@@ -71,26 +145,13 @@
       </p>
     </header>
     <main class="main">
-      <div class="wpProduct" id="wpProduct">
-        <!-- <div class="product-cart">
-          <img
-            src="./assets/img-web-gom/binh-hoa-rong.jpg"
-            alt=""
-            class="product-img"
-          />
-          <div class="product-info">
-            <p class="product-name">Bình hoa nghệ thuât hình rồng</p>
-            <span class="idProduct">ID: 1 </span>
-            <div class="product-info-price">
-              <span class="product-price">50000</span>
-              <span class="product-cout">0</span>
-              <button class="product-buy" onclick="buy()">BUY</button>
-            </div>
-          </div>
-        </div> -->
+      <div class="container text-center">
+        <div class="row row-cols-4" id="wpProduct">
+         
+        </div>
       </div>
     </main>
-
+    <script src="/assets/bootstrap-5.3.0-alpha2-dist/js/bootstrap.min.js"></script>
     <script src="/assets/file-js/main-web.js"></script>
   </body>
 </html>

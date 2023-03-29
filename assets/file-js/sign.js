@@ -1,6 +1,5 @@
 // phân đăng kí
-let dataForm = JSON.parse(localStorage.getItem("dataForm"));
-
+let dataForm = JSON.parse(localStorage.getItem("dataForm")) || [];
 function Summit(e) {
     e.preventDefault(e)
     let fistName = document.getElementById("fistName").value;
@@ -8,7 +7,6 @@ function Summit(e) {
     let emailInput = document.getElementById("signUp__email-input").value;
     let passwordInput = document.getElementById("signUp__password-input").value;
     let passwordInputAgain = document.getElementById("password-input-again").value;
-   
     let listForm = {
         name: fistName,
         lastname: lastName,
@@ -16,34 +14,39 @@ function Summit(e) {
         passwword: passwordInput,
         passwordAgain: passwordInputAgain,
     };
-   
     let chekHoll = Object.values(listForm);
     for (let i = 0; i < chekHoll.length; i++) {
         if (chekHoll[i] === "") {
-            alert("mời nhập đầy đủ thông tin");
+            daydu()
             return
         }
     }
-
+    let checkEmail = dataForm.some((user) => user.email === emailInput)
+    if (checkEmail) {
+        couttk()
+        console.log("sìun")
+        return
+    }
     let checkGmail = document.getElementById("signUp__email-input").value;
     if (checkGmail.endsWith("@gmail.com")) {
         if (passwordInput !== passwordInputAgain) {
-            alert("bạn nhạp lại mật khẩu sai");
+            again()
             return
         } else if (dataForm == null) {
             dataForm = [];
             dataForm.push(listForm)
             localStorage.setItem("dataForm", JSON.stringify(dataForm));
-        } else  {
+        } else {
             dataForm.push(listForm);
             localStorage.setItem("dataForm", JSON.stringify(dataForm));
-            alert("chuc mừng bạn nhập đúng");
+            sussec()
+            localStorage.setItem("flag", 1)
             setTimeout(function () {
-                window.location.assign("./index.html");
-            }, 3000);
+                window.location.assign("/index.html");
+            }, 1000);
         };
     } else {
-        alert("nhập lại email");
+        Email();
     };
 }
 let cout = 0;
@@ -79,6 +82,38 @@ function eyeSignUpAgain(e) {
         cout = 0;
     }
 }
+function daydu() {
+    document.getElementById("daydu").style.display = "block";
+    setTimeout(function () {
+        document.getElementById("daydu").style.display = "none";
+    }, 3000)
+}
+function couttk() {
+    document.getElementById("couttk").style.display = "block";
+    setTimeout(function () {
+        document.getElementById("couttk").style.display = "none";
+    }, 3000)
+}
+function  again() {
+    document.getElementById("again").style.display = "block";
+    setTimeout(function () {
+        document.getElementById("again").style.display = "none";
+    }, 3000)
+}
+function sussec() {
+    document.getElementById("sussec").style.display = "block";
+    setTimeout(function () {
+        document.getElementById("sussec").style.display = "none";
+    }, 3000)
+}
+function Email() {
+    document.getElementById("Email").style.display = "block";
+    setTimeout(function () {
+        document.getElementById("Email").style.display = "none";
+    }, 3000)
+}
+
+
 
 
 

@@ -132,3 +132,8 @@ body {
     background-color:  rgb(97 40 24);
     color: white;
 }
+.wrong{
+    display: none;
+    text-align: center;
+    color: red;
+}

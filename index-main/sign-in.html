@@ -8,6 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha2-dist/css/bootstrap.min.css">
     <link
       rel="stylesheet"
       href="/fontawesome-free-6.3.0-web/css/all.min.css"
@@ -22,6 +23,7 @@
     }
   </style>
   <body>
+    
     <div class="container">
       <form action="">
         <h1 class="title">Đăng nhập</h1>
@@ -41,14 +43,16 @@
           <i
             class="fa-solid fa-eye-slash"
             id="eye-signIn"
-            onclick="eyeSignIn()"
+            onclick="eyeSignIn(event)"
           ></i>
         </div>
-        <a href="./index-sign-up.html" target="" class="Sign-in__link">Tạo tài khoản!</a>
+        <a href="/index-main/sign-up.html" target="" class="Sign-in__link">Tạo tài khoản!</a>
          <button class="button-sign-in"  onclick="impClick(event)"> Nhập </button>
       </form>
+      <p class="wrong" id="signWrong">Email hoặc password không chính xác </p>
+      
     </div>
-
+    
     <script src="/assets/file-js/sign-in.js"></script>
   </body>
 </html>

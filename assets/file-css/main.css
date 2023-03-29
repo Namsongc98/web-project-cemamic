@@ -162,17 +162,17 @@
     align-items: center;
 }
 
-.conainer-product{
-    border: 1px solid #dadada;
-    border-radius: 6px;
-}
+
 .conainer-product{
     display: grid;
-    grid-template-columns: 45% 25% 25%;
+    grid-template-columns: 40% 25% 25%;
     gap: 20px;
     padding: 10px;
     margin-top: 20px;
     width: 40%;
+    border: 1px solid #dadada;
+    border-radius: 6px;
+    width: 600px;
 
 }
 .product-bag{

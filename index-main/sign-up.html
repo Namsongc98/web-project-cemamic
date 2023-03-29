@@ -13,6 +13,8 @@
       rel="stylesheet"
       href="/fontawesome-free-6.3.0-web/css/all.min.css"
     />
+    <link rel="stylesheet" href="/assets/bootstrap-5.3.0-alpha2-dist/css/bootstrap.min.css">
+
     <title>Sign-up</title>
   </head>
   <style>
@@ -22,8 +24,9 @@
   </style>
   <body>
     <div class="signUp__wp">
-      <form action="">
+      <div action="">
         <h1 class="title">Đăng ký</h1>
+        
         <div class="wp-userName">
           <label for="">Họ</label>
           <input type="text" class="fistname" id="fistName" />
@@ -72,8 +75,15 @@
         >
           Xác Nhận
         </button>
-      </form>
+        <p class="wrong" id="daydu">Mời nhập đầy đủ thông tin</p>
+        <p class="wrong" id="couttk">Tài khoản đã có mời tạo tài khoản khác</p>
+        <p class="wrong" id="again">Mời nhập lại mật khẩu</p>
+        <p class="wrong" id="sussec">Đăng nhập thành công</p>
+        <p class="wrong" id="signWrong">Email phải có đuôi @gmail.com </p>
+      </div>
+      
     </div>
+
     <script src="/assets/file-js/sign.js"></script>
   </body>
 </html>

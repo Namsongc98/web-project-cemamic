@@ -12,10 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link
-      rel="stylesheet"
-      href="/fontawesome-free-6.3.0-web/css/all.min.css"
-    />
+    <link rel="stylesheet" href="/fontawesome-free-6.3.0-web/css/all.min.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
@@ -28,7 +25,11 @@
     <header class="header">
       <div class="header-wapper">
         <div class="header-wapper__logo">
-          <img src="/assets/img-web-gom/logo-gom.jpg" alt="" class="header-wapper__logo" />
+          <img
+            src="/assets/img-web-gom/logo-gom.jpg"
+            alt=""
+            class="header-wapper__logo"
+          />
           <h3 class="title-logo">Phương Anh</h3>
         </div>
         <nav class="header-nav">
@@ -67,34 +68,36 @@
       <div class="main-left">
         <h3 class="product-tite" id="quantity">Giỏ hàng của bạn</h3>
         <p class="product-quantity" id="quantity">bạn đang có số sản phẩm là</p>
-        <div class="conainer-product" id="container-product">
-          <div class="product-bag">
-            <img
-              src="/assets/img-web-gom/binh-hoa-rong.jpg"
-              alt=""
-              class="img-bag"
-            />
-            <div>
-              <h3 class="name-product">ten</h3>
-              <p class="spice-product">tiên</p>
+        <div id="container-product">
+          <div class="conainer-product" >
+            <div class="product-bag">
+              <img
+                src="/assets/img-web-gom/binh-hoa-rong.jpg"
+                alt=""
+                class="img-bag"
+              />
+              <div>
+                <h3 class="name-product">ten</h3>
+                <p class="spice-product">tiên</p>
+              </div>
+            </div>
+            <div class="bag-button-wp">
+              <button class="bag-button" onclick="buttonMin()">-</button>
+              <span class="product-number"> sl</span>
+              <button class="bag-button" onclick="buttonPlus()">+</button>
+            </div>
+            <div class="bag-right">
+              <span class="total">tiền </span>
+              <button class="delete" id="delete" onclick="erase()">xóa</button>
             </div>
           </div>
-          <div class="bag-button-wp">
-            <button class="bag-button" onclick="buttonMin()">-</button>
-            <span class="product-number"> sl</span>
-            <button class="bag-button" onclick="buttonPlus()">+</button>
-          </div>
-          <div class="bag-right">
-            <span class="total">tiền </span>
-            <button class="delete" id="delete" onclick="erase()" >xóa</button>
-          </div>
+          
         </div>
       </div>
       <div class="main-right">
         <div class="wpProduct" id="wpProductBag"></div>
       </div>
     </main>
-    <script src="/assets/file-js/bag-product.js"></script>
-    
+    <script src="/assets/file-js/cart-product.js"></script>
   </body>
 </html>

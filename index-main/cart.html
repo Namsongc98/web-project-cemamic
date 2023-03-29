@@ -30,7 +30,7 @@
             alt=""
             class="header-wapper__logo"
           />
-          <h3 class="title-logo">Phương Anh</h3>
+          <h5 class="title-logo">Phương Anh</h5>
         </div>
         <nav class="header-nav">
           <ul class="header-nav__list">
@@ -38,7 +38,7 @@
               <a href="" class="header-nav__link">Trang chủ</a>
             </li>
             <li class="header-nav__item">
-              <a href="./index.html" class="header-nav__link">Menu</a>
+              <a href="" class="header-nav__link">Menu</a>
             </li>
             <li class="header-nav__item">
               <a href="" class="header-nav__link">Kết nối</a>
@@ -58,8 +58,14 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
           <i class="fa-regular fa-user"></i>
-          <a href="./index-bag.html" target="_blank" rel="noopener noreferrer">
+          <a
+            href="./index-main/cart.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="wp-quantity"
+          >
             <i class="fa-solid fa-cart-shopping"></i>
+            <div class="quantity" id="quantity"></div>
           </a>
         </div>
       </div>
@@ -69,29 +75,6 @@
         <h3 class="product-tite" id="quantity">Giỏ hàng của bạn</h3>
         <p class="product-quantity" id="quantity">bạn đang có số sản phẩm là</p>
         <div id="container-product">
-          <div class="conainer-product" >
-            <div class="product-bag">
-              <img
-                src="/assets/img-web-gom/binh-hoa-rong.jpg"
-                alt=""
-                class="img-bag"
-              />
-              <div>
-                <h3 class="name-product">ten</h3>
-                <p class="spice-product">tiên</p>
-              </div>
-            </div>
-            <div class="bag-button-wp">
-              <button class="bag-button" onclick="buttonMin()">-</button>
-              <span class="product-number"> sl</span>
-              <button class="bag-button" onclick="buttonPlus()">+</button>
-            </div>
-            <div class="bag-right">
-              <span class="total">tiền </span>
-              <button class="delete" id="delete" onclick="erase()">xóa</button>
-            </div>
-          </div>
-          
         </div>
       </div>
       <div class="main-right">

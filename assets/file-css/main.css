@@ -59,6 +59,19 @@
     margin: auto 12px;
     font-size: 25px;
 }
+.wp-quantity{
+    position: relative;
+}
+.quantity{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    top: -8px;
+    right: 2px;
+}
 .banner {
     width: 100%;
 }

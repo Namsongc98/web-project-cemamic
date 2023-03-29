@@ -65,8 +65,10 @@
             href="./index-main/cart.html"
             target="_blank"
             rel="noopener noreferrer"
+            class="wp-quantity"
           >
             <i class="fa-solid fa-cart-shopping"></i>
+            <div class="quantity" id="quantity"></div>
           </a>
         </div>
       </div>
@@ -146,12 +148,12 @@
     </header>
     <main class="main">
       <div class="container text-center">
-        <div class="row row-cols-4" id="wpProduct">
-        </div>
+        <div class="row row-cols-4" id="wpProduct"></div>
       </div>
     </main>
     <script src="/assets/bootstrap-5.3.0-alpha2-dist/js/bootstrap.min.js"></script>
-<script src="./assets//file-js/main-web.js"></script>
-<!-- <script src="assets/file-js/main-web.js"></script> -->
+    <script src="./assets//file-js/handle-by-product.js"></script>
+    <script src="./assets//file-js/constant.js"></script>
+    <!-- <script src="assets/file-js/main-web.js"></script> -->
   </body>
 </html>

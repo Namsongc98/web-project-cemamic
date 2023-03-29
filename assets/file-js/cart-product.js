@@ -1,24 +1,50 @@
- let renderCart = JSON.parse(localStorage.getItem("renderCart"));
- if (renderCart == null) {
-     renderCart = [];
- };
-//  function RenderCart() { 
-//    let renderBuy="";
-//    console.log(renderCart)
-//      for (let i = 0; i < renderCart.length; i++) {
-//       renderBuy+= `
-//         <div class="card shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 15rem;" >
-//               <img src="${renderCart[i].image}" class="card-img-top" alt="...">
-//               <div class="card-body">
-//                 <h5 class="card-title">${renderCart[i].name}</h5>
-//                 <p class="card-text">${i}</p>
-//                 <p class="card-text">${renderCart[i].price}</p>
-//                 <button class="btn btn-primary" onclick="buy(${renderCart[i].id})">BUY</button>
-//               </div>
-//         </div>
-//          `
-//         }
-//         console.log(renderBuy);
-//         document.getElementById("container-product").innerHTML = renderBuy;
-// }
-// RenderCart()
+let listToCart = JSON.parse(localStorage.getItem("listToCart")) || [];
+console.log(listToCart)
+let renderCart = ``;
+
+
+function renderCartInWeb() {
+  for (let i = 0; i < listToCart.length; i++) {
+    renderCart += `
+        <div class="conainer-product" >
+            <div class="product-bag">
+              <img
+                src="${listToCart[i].image}"
+                alt=""
+                class="img-bag"
+              />
+              <div>
+                <h3 class="name-product">${listToCart[i].name}</h3>
+                <p class="spice-product">tiên</p>
+              </div>
+            </div>
+            <div class="bag-button-wp">
+              <button class="bag-button" onclick="buttonMinus()">-</button>
+              <span class="product-number" id="quantity"></span>
+              <button class="bag-button" onclick="buttonPlus()">+</button>
+            </div>
+            <div class="bag-right">
+              <span class="total" id="totalMoney"></span>
+              <button class="delete" id="delete" onclick="erase(${i})">xóa</button>
+            </div>
+        </div>
+        `
+    document.getElementById("container-product").innerHTML = renderCart;
+  }
+}
+renderCartInWeb() 
+//xóa sản phẩm
+function erase(poisionProduct) {
+  listToCart.splice(poisionProduct, 1)
+  localStorage.setItem("listToCart",JSON.stringify(listToCart))
+}
+//cộng product
+let quantity = 1;
+function buttonPlus(){
+  quantity += 1;
+  console.log(quantity)
+  document.getElementById('quantity').innerHTML = quantity;
+}
+
+
+

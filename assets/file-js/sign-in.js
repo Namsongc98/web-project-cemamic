@@ -1,15 +1,16 @@
-
 function impClick(e) {
     e.preventDefault(e)
     let stringEmail = document.getElementById("signIn__email-input").value;
     let stringPass = document.getElementById("signIn__password-input").value;
-    let dataForm = JSON.parse(localStorage.getItem("dataForm")) || []
-    let checkForm = dataForm.find((user) => user.email === stringEmail && user.passwword === stringPass)
+    let dataFormUser = JSON.parse(localStorage.getItem("dataFormUser")) || []
+    let checkForm = dataFormUser.find((user) => user.email === stringEmail && user.passwword === stringPass)
     if (checkForm) {
-        localStorage.setItem("flag",1)
+        localStorage.setItem("flagUser",1)
        window.location.href = '/index.html';
+       localStorage.setItem("nameFormUser",checkForm.name)
     } else {
-        localStorage.setItem("flag",0)
+        localStorage.setItem("flagUser",0)
+
        signWrong()
     }
 }
@@ -19,12 +20,12 @@ function  signWrong() {
         document.getElementById("signWrong").style.display = "none";
     }, 3000)
 }
+
 let inputEyeAgain = document.getElementById("signIn__password-input");
 let eyeChaneAgain = document.getElementById("eye-signIn");
 let cout = 0;
 function eyeSignIn(e) {
     e.preventDefault(e)
-    console.log("se")
     cout++;
     if (cout == 1) {
         inputEyeAgain.type = "text";

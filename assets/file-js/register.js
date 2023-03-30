@@ -1,7 +1,6 @@
-// phân đăng kí
-let dataForm = JSON.parse(localStorage.getItem("dataForm")) || [];
-function Summit(e) {
-    e.preventDefault(e)
+let dataFormUser = JSON.parse(localStorage.getItem("dataFormUser")) || [];
+function submidRegister() {
+    console.log("xác nhận")
     let fistName = document.getElementById("fistName").value;
     let lastName = document.getElementById("lastName").value;
     let emailInput = document.getElementById("signUp__email-input").value;
@@ -17,36 +16,35 @@ function Summit(e) {
     let chekHoll = Object.values(listForm);
     for (let i = 0; i < chekHoll.length; i++) {
         if (chekHoll[i] === "") {
-            daydu()
-            return
+            fullInfor()
+            return;
         }
     }
-    let checkEmail = dataForm.some((user) => user.email === emailInput)
+    let checkEmail = dataFormUser.some((user) => user.email === emailInput)
     if (checkEmail) {
-        couttk()
-        console.log("sìun")
-        return
+        sameAccount();
+        return;
     }
     let checkGmail = document.getElementById("signUp__email-input").value;
     if (checkGmail.endsWith("@gmail.com")) {
         if (passwordInput !== passwordInputAgain) {
-            again()
+            passwordAgain();
             return
-        } else if (dataForm == null) {
-            dataForm = [];
-            dataForm.push(listForm)
-            localStorage.setItem("dataForm", JSON.stringify(dataForm));
+        } else if (dataFormUser == null) {
+            dataFormUser = [];
+            dataFormUser.push(listForm)
+            localStorage.setItem("dataFormUser", JSON.stringify(dataFormUser));
         } else {
-            dataForm.push(listForm);
-            localStorage.setItem("dataForm", JSON.stringify(dataForm));
+            dataFormUser.push(listForm);
+            localStorage.setItem("dataFormUser", JSON.stringify(dataFormUser));
             sussec()
-            localStorage.setItem("flag", 1)
+            localStorage.setItem("flagUser", 1)
             setTimeout(function () {
                 window.location.assign("/index.html");
             }, 1000);
         };
     } else {
-        Email();
+        checkEmailEnd();
     };
 }
 let cout = 0;
@@ -63,8 +61,6 @@ function eyeSignUp(e) {
     } else if (cout == 2) {
         inputEye.type = "password";
         eyeChane.classList.remove("fa-eye");
-        console.log(eyeChane.classList);
-        console.log(cout);
         cout = 0;
     }
 }
@@ -82,19 +78,19 @@ function eyeSignUpAgain(e) {
         cout = 0;
     }
 }
-function daydu() {
+function fullInfor() {
     document.getElementById("daydu").style.display = "block";
     setTimeout(function () {
         document.getElementById("daydu").style.display = "none";
     }, 3000)
 }
-function couttk() {
+function sameAccount() {
     document.getElementById("couttk").style.display = "block";
     setTimeout(function () {
         document.getElementById("couttk").style.display = "none";
     }, 3000)
 }
-function  again() {
+function  passwordAgain() {
     document.getElementById("again").style.display = "block";
     setTimeout(function () {
         document.getElementById("again").style.display = "none";
@@ -106,7 +102,7 @@ function sussec() {
         document.getElementById("sussec").style.display = "none";
     }, 3000)
 }
-function Email() {
+function checkEmailEnd() {
     document.getElementById("Email").style.display = "block";
     setTimeout(function () {
         document.getElementById("Email").style.display = "none";

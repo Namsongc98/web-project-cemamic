@@ -63,11 +63,13 @@
           </div>
           <i class="fa-regular fa-user"></i>
           <a
-            href="/index-main/cart.html"
+            href="./cart.html"
             target="_blank"
             rel="noopener noreferrer"
+            class="wp-quantity"
           >
             <i class="fa-solid fa-cart-shopping"></i>
+            <div class="quantity" id="quantity"></div>
           </a>
         </div>
       </div>
@@ -98,7 +100,7 @@
         </div>
 
         <button
-          onclick="Summit(event)"
+          onclick=" AddProduct()"
           id="winSignIn"
           class="button-product btn btn-info"
         >
@@ -107,10 +109,11 @@
 
       </div>
       <div class="wp-table">
-        <table id="table">
+        <table id="tableInContainer">
           
         </table>
       </div>
     </main>
+    <script src="/assets/file-js/add-min.js"></script>
   </body>
 </html>

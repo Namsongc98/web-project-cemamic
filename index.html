@@ -25,6 +25,7 @@
     <title>Phương Anh Gốm Shop</title>
   </head>
   <body>
+    <!-- phần header -->
     <header class="header">
       <div class="header-wapper">
         <div class="header-wapper__logo">
@@ -35,22 +36,24 @@
           />
           <h5 class="title-logo">Phương Anh</h5>
         </div>
+        <!-- phần nav -->
         <nav class="header-nav">
           <ul class="header-nav__list">
             <li class="header-nav__item">
-              <a href="" class="header-nav__link">Trang chủ</a>
+              <a href="" class="header-nav__link hover-header">Trang chủ</a>
             </li>
             <li class="header-nav__item">
-              <a href="" class="header-nav__link">Menu</a>
+              <a href="" class="header-nav__link hover-header">Menu</a>
             </li>
             <li class="header-nav__item">
-              <a href="" class="header-nav__link">Kết nối</a>
+              <a href="" class="header-nav__link hover-header">Kết nối</a>
             </li>
             <li class="header-nav__item">
-              <a href="" class="header-nav__link">Event & New</a>
+              <a href="" class="header-nav__link hover-header">Event & New</a>
             </li>
           </ul>
         </nav>
+        <!-- phân icon -->
         <div class="header__right">
           <div class="header__wpSearch">
             <input
@@ -60,7 +63,20 @@
             />
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
-          <i class="fa-regular fa-user"></i>
+          <div class="head-user"  onclick="diplayAccout()">
+            <i class="fa-regular fa-user"></i>
+            <h5 class="userDisplay" id="userDisplay"></h5>
+            <div class="wp-inforUser" id="diplayAccout">
+              <a href="/index-main/sign-in.html" class="inforUser-accout">
+                <i class="fa-regular fa-user"></i>
+                <span class="sign-in">Tài khoản</span>
+              </a>
+              <a href="/index-main/sign-in.html" class="sign-out inforUser-accout">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span class="sign-in">Đăng xuất</span>
+              </a>
+            </div>
+          </div>
           <a
             href="./index-main/cart.html"
             target="_blank"
@@ -72,6 +88,7 @@
           </a>
         </div>
       </div>
+      <!-- phàn sliceder -->
       <div id="carouselExampleIndicators" class="carousel slide">
         <div class="carousel-indicators">
           <button
@@ -148,12 +165,17 @@
     </header>
     <main class="main">
       <div class="container text-center">
-        <div class="row row-cols-4" id="wpProduct"></div>
+        <div class="row row-cols-4" id="wpProduct">
+          <!-- -------- -->
+         
+          <!-- ---------- -->
+        </div>
       </div>
     </main>
     <script src="/assets/bootstrap-5.3.0-alpha2-dist/js/bootstrap.min.js"></script>
     <script src="./assets//file-js/handle-by-product.js"></script>
-    <script src="./assets//file-js/constant.js"></script>
+    <!-- <script src="./assets//file-js/constant.js"></script> -->
+    <!-- <script src="/assets/file-js/register.js"></script> -->
     <!-- <script src="assets/file-js/main-web.js"></script> -->
   </body>
 </html>

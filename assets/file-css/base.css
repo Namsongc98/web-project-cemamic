@@ -9,3 +9,144 @@ body{
 * {
     box-sizing: border-box;
 }
+
+
+/* ____________________header_______________________________ */
+
+.title-logo {
+    font-weight: 500;
+    white-space: nowrap;
+    margin: 0;
+    color: #17a2b8;
+    text-align: center;
+}
+.header-wapper__logo {
+    width: 150px;
+}
+.header__logo{
+    width: 80px;
+    display: block;
+    margin: 0 auto;
+}
+.header-wapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    max-width: 1320px;
+    margin: 10px auto;
+    padding: 0 20px;
+}
+.header-nav {
+    width: 500px;
+}
+.header-nav__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+}
+.hover-header:hover {
+    color: #17a2b8;
+}
+.header-nav__item {
+    list-style: none;
+}
+.header-nav__link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    font-size: 20px;
+}
+.header-nav__link:hover{
+    color: #17a2b8
+}
+.header__right {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+.header__wpSearch {
+    display: flex;
+    width: 230px;
+}
+.header__search {
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+}
+.fa-regular,
+.fa-solid {
+    color: black;
+}
+.fa-regular:hover,
+.fa-solid:hover {
+    color: #17a2b8;
+}
+.fa-solid,
+.fa-regular {
+    margin: auto 12px;
+    font-size: 27px;
+}
+.accoutUser {
+    margin: auto 5px;
+}
+.carousel-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+}
+.wp-inforUser {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0px;
+    z-index: 999;
+    width: 150px;
+    height: 80px;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: white;
+}
+.userDisplay:hover,
+.fa-user:hover {
+    cursor: pointer;
+}
+.sign-out {
+    border-top: 1px solid grey;
+}
+
+.fa-solid,
+.fa-regular {
+    font-size: 20px;
+}
+.inforUser-accout {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    line-height: 40px;
+}
+.head-user {
+    display: flex;
+    position: relative;
+
+}
+.userDisplay {
+    margin: 0 5px;
+    color: #17a2b8;
+}
+.wp-quantity {
+    position: relative;
+}
+.quantity {
+    width: 20px;
+    height: 20px;
+    background-color: #17a2b8;
+    border-radius: 50%;
+    color: white;
+    position: absolute;
+    top: -8px;
+    right: 2px;
+    text-align: center;
+    line-height: 20px;
+}

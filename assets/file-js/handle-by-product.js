@@ -5,7 +5,10 @@
 //   localStorage.setItem("listProduct", JSON.stringify(listProductDefind))
 // }
 
+
+
 let products = JSON.parse(localStorage.getItem("listProduct")) ? JSON.parse(localStorage.getItem("listProduct")) : [];
+ 
 function render() {
   for (let i = 0; i < products.length; i++) {
     let renderPro = `
@@ -74,5 +77,4 @@ function diplayAccout() {
     document.getElementById("diplayAccout").style.display = "none"
     coutDiplayAccout = 0;
   }
-  
 }

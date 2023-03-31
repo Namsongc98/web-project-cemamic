@@ -32,7 +32,7 @@
           <img
             src="/assets/img-web-gom/logo-gom.jpg"
             alt=""
-            class="header-wapper__logo"
+            class="header__logo"
           />
           <h5 class="title-logo">Phương Anh</h5>
         </div>
@@ -75,45 +75,70 @@
       </div>
     </header>
     <h1 class="title-repo">Kho sản phẩm</h1>
-    <main class="main-prd">
-      <h2 class="product-title">Nhập Sản phẩm</h2>
-      <div class="wp-form">
-        <div class="wp-item">
-          <label for="" class="name-form">Tên sản shẩm</label>
-          <input type="text" class="input-product" id="name-prd" />
-        </div>
-        <div class="wp-item">
-          <label for="" class="name-form">Mã sản shẩm</label>
-          <input type="email" class="input-product" id="id-prd" />
-        </div>
-        <div class="wp-item">
-          <label for="" class="name-form">Giá sản phẩm</label>
-          <input type="password" class="input-product" id="price-prd" />
-        </div>
-        <div class="wp-item">
-          <label for="" class="name-form">số lượng</label>
-          <input type="password" class="input-product" id="prd-number" />
-        </div>
-        <div class="wp-item">
-          <label for="image" class="name-form">Chọn sản phẩm</label><br>
-          <input type="file" id="image" name="image" class="file-img"  onchange="previewImage(this) "/>
-        </div>
-
-        <button
-          onclick=" AddProduct()"
-          id="winSignIn"
-          class="button-product btn btn-info"
-        >
-          Nhập
-        </button>
-
+    <div class="wp-repoProduct">
+      <div class="wp-nav">
+        <a href="" class="repo-product">
+          <i class="fa-solid fa-warehouse"></i>
+          <span class="repo-product__link">Kho sản phẩm</span>
+        </a>
+        <a href="" class="repo-product">
+          <i class="fa-solid fa-cart-plus"></i>
+          <span class="repo-product__link">Quản lí đơn hàng </span>
+        </a>
+        <a href="" class="repo-product">
+          <i class="fa-regular fa-user"></i>
+          <span class="repo-product__link">Quản lí người dùng</span>
+        </a>
       </div>
-      <div class="wp-table">
-        <table id="tableInContainer">
-          
-        </table>
+      <div class="wp-right">
+        <div class="wp-form-img">
+          <div class="main-prd">
+            <h2 class="product-title">Nhập Sản phẩm</h2>
+            <div class="wp-form">
+              <div class="wp-item">
+                <label for="" class="name-form">Tên sản shẩm</label>
+                <input type="text" class="input-product" id="name-prd" />
+              </div>
+              <div class="wp-item">
+                <label for="" class="name-form">Mã sản shẩm</label>
+                <input type="email" class="input-product" id="id-prd" />
+              </div>
+              <div class="wp-item">
+                <label for="" class="name-form">Giá sản phẩm</label>
+                <input type="text" class="input-product" id="price-prd" />
+              </div>
+              <div class="wp-item">
+                <label for="" class="name-form">số lượng</label>
+                <input type="text" class="input-product" id="prd-number" />
+              </div>
+              <div class="wp-item">
+                <label for="image" class="name-form">Chọn sản phẩm</label><br />
+                <input
+                  type="file"
+                  id="image-display"
+                  name="image"
+                  class="file-img"
+                 
+                />
+              </div>
+              <button onclick="addProductRepo()" class="button-product">
+                Nhập
+              </button>
+            </div>
+          </div>
+          <div class="display-img" id="display-img">
+            <p class="title-img">Hình ảnh hiển thị sản phẩm</p>
+            <img src="" alt="" class="diplay-img__prd" id="diplay-img__prd"  multiple />
+          </div>
+        </div>
+        <div class="wp-table">
+          <table id="tableInProduct" class="tableInContainer">
+           
+          </table>
+        </div>
       </div>
-    </main>
-    <script src="/assets/file-js/add-min.js"></script>
+    </div>
+
+    <script src="../assets/file-js/add-min.js"></script>
   </body>
 </html>

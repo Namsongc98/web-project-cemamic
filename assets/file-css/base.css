@@ -3,9 +3,11 @@
     --black-color: #000;
     --text-color: #333;
 }
-body{
+
+body {
     font-family: 'Roboto', sans-serif;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -19,82 +21,133 @@ body{
     margin: 0;
     color: #17a2b8;
     text-align: center;
+
 }
+
 .header-wapper__logo {
     width: 150px;
 }
-.header__logo{
-    width: 80px;
+
+.header__logo {
+    width: 60px;
     display: block;
     margin: 0 auto;
+    background-color: #e6e7e9;
+    background-color: #e6e7e9;
 }
+
+@media only screen and (max-width: 768px) {
+    .header-wapper {
+        flex-wrap: wrap;
+    }
+    .header-wapper__logo {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .header__text {
+        display: flex;
+        overflow-x: scroll;
+        margin: 20px 80px;
+        height: 100px;
+        font-size: 1.2em;
+    }
+    .header-nav__list{
+        padding-left: 0px;
+    }
+    .header-nav__link{
+        font-size: 12px;
+    }
+}
+
 .header-wapper {
+    /* position: fixed; */
+    top: 0px;
+    margin: 0 auto;
+    z-index: 999;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px;
+    min-height: 100px;
     max-width: 1320px;
-    margin: 10px auto;
     padding: 0 20px;
+    background-color: #e6e7e9;
+    left: inherit;
+    right: inherit;
+    top: 0;
 }
+
 .header-nav {
     width: 500px;
 }
+
 .header-nav__list {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0;
 }
+
 .hover-header:hover {
     color: #17a2b8;
 }
+
 .header-nav__item {
     list-style: none;
 }
+
 .header-nav__link {
     text-decoration: none;
     color: #333;
     font-weight: 400;
     font-size: 20px;
 }
-.header-nav__link:hover{
+
+.header-nav__link:hover {
     color: #17a2b8
 }
+
 .header__right {
     display: flex;
     align-items: center;
     margin-right: 30px;
 }
+
 .header__wpSearch {
     display: flex;
     width: 230px;
 }
+
 .header__search {
     border: none;
     border-bottom: 1px solid gray;
     outline: none;
 }
+
 .fa-regular,
 .fa-solid {
     color: black;
 }
+
 .fa-regular:hover,
 .fa-solid:hover {
     color: #17a2b8;
 }
+
 .fa-solid,
 .fa-regular {
     margin: auto 12px;
     font-size: 27px;
 }
+
 .accoutUser {
     margin: auto 5px;
 }
+
 .carousel-inner {
     max-width: 1320px;
     margin: 0 auto;
 }
+
 .wp-inforUser {
     display: none;
     position: absolute;
@@ -108,10 +161,12 @@ body{
     border: 1px solid grey;
     background-color: white;
 }
+
 .userDisplay:hover,
 .fa-user:hover {
     cursor: pointer;
 }
+
 .sign-out {
     border-top: 1px solid grey;
 }
@@ -120,24 +175,29 @@ body{
 .fa-regular {
     font-size: 20px;
 }
+
 .inforUser-accout {
     text-decoration: none;
     color: #333;
     display: block;
     line-height: 40px;
 }
+
 .head-user {
     display: flex;
     position: relative;
 
 }
+
 .userDisplay {
     margin: 0 5px;
     color: #17a2b8;
 }
+
 .wp-quantity {
     position: relative;
 }
+
 .quantity {
     width: 20px;
     height: 20px;
@@ -149,4 +209,8 @@ body{
     right: 2px;
     text-align: center;
     line-height: 20px;
+}
+
+.card-title {
+    height: 60px;
 }

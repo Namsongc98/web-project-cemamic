@@ -40,6 +40,7 @@ function handleBuyPoduct(productId) {
     alert("chưa đăng nhập");
     return;
   }
+ 
   const productFindById = products.find((production) => production.id == productId);
   if (!productFindById) {
     alert('Sản phẩm cần mua không nằm trong danh mục sản phâm được bán!')
@@ -48,13 +49,14 @@ function handleBuyPoduct(productId) {
   
   let checkProductionInCart = this.checkProductionInCart(productFindById.id, listToCart);
   if (checkProductionInCart) {
+    console.log(listToCart)
     alert(`sản phẩm ${productFindById.name} đã có trong giỏ hàng`)
-
     return
   }
   pushProductionInCart(productFindById);
 }
 // đẩy sản phẩm vào giỏ hàng
+
 let coutProduct = 0;
 function pushProductionInCart(productFindById) {
   listToCart.push(productFindById);

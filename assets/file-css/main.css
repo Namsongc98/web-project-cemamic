@@ -11,10 +11,48 @@
     max-width: 1320px;
 
 }
+
 /* phân body */
+
 .main {
     margin: 20px;
 }
+
+/*sản phẩm nổi bật*/
+.product-top-wp {}
+
+.prd-cate-title {
+
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .wp-prd-cate {
+        overflow-x: scroll;
+        justify-content: space-around;
+    }
+}
+
+.wp-prd-cate {
+    margin: 10px auto;
+    padding: 10px;
+    max-width: 1200px;
+    max-height: 560px;
+    display: grid;
+
+    justify-content: space-around;
+    grid-template-columns: auto auto auto;
+
+    background-color: #e6e6e6;
+}
+
+.cate-img {
+    max-width: 370px;
+
+}
+
 .wpProduct {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
@@ -25,18 +63,18 @@
     .wpProduct {
         grid-template-columns: 25% 25% 25%;
     }
-    .header__text {
-        display: flex;
-        overflow-x: scroll;
-        margin: 20px 80px;
-    }
+
 }
+
 .product-cart {
     border-radius: 10px
 }
+
 .row {
-    justify-content: center
+    justify-content: center;
+    margin: 0px !important
 }
+
 .product-img {
     width: 100%;
     border-radius: 10px;
@@ -46,28 +84,34 @@
     font-size: 20px;
     overflow: hidden;
 }
+
 .product-info {
     padding: 10px;
 }
+
 .product-info-price {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px auto;
 }
+
 .product-price {
     font-size: 25px;
 }
+
 .product-buy {
     width: 60px;
     height: 50px;
     border-radius: 8px;
     border: 1px solid gray;
 }
+
 .product-buy:hover {
     background-color: #17a2b8;
     color: white;
 }
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     /* max-width: 300px; */
@@ -75,8 +119,9 @@
     margin: auto;
     text-align: center;
     font-family: arial;
-  }
-  .card button {
+}
+
+.card button {
     border: none;
     outline: 0;
     padding: 12px;
@@ -86,7 +131,8 @@
     cursor: pointer;
     width: 100%;
     font-size: 18px;
-  }
-  .card button:hover {
+}
+
+.card button:hover {
     opacity: 0.7;
-  }
+}

@@ -9,8 +9,8 @@ function renderCartInWeb() {
         <div class="toast-body">
           Bạn có muốn xóa sản phẩm 
           <div class="wp-button">
-            <button class="btn-agree" onclick="ageer()">Xác nhận</button>
-            <button class="btn-disagree" onclick=" erase()">Xóa</button>
+            <button class="btn-agree" onclick="ageer(${i})">Exit</button>
+            <button class="btn-disagree" onclick=" erase(${i})">Xóa</button>
           </div>
         </div>
       </div>
@@ -32,7 +32,7 @@ function renderCartInWeb() {
       <div class="bag-right">
         <span class="total" id="totalMoney"></span>
         <button class="delete" id="delete" onclick="erase(${i})">xóa</button>
-      </div>
+        </div>
     </div>
         `
 
@@ -47,27 +47,23 @@ function erase(poisionProduct) {
   renderCartInWeb();
 }
 //cộng product
-function buttonPlus(plusProduct) {
-  localStorage.getItem(JSON.stringify("listToCart"));
-  listToCart[plusProduct].quantity++;
+function buttonPlus(poisionPlusProduct) {
+  listToCart[poisionPlusProduct].quantity++;
   localStorage.setItem("listToCart", JSON.stringify(listToCart));
   renderCartInWeb();
 }
-function buttonMinus(MinusProduct,posision) {
-  console.log(MinusProduct)
-  localStorage.getItem(JSON.stringify("listToCart"))
-  if (listToCart[MinusProduct].quantity > 0) {
-    listToCart[MinusProduct].quantity--;
+function buttonMinus(poisionMinusProduct) {
+  if(listToCart[poisionMinusProduct].quantity > 0){
+    listToCart[poisionMinusProduct].quantity--;
     localStorage.setItem("listToCart", JSON.stringify(listToCart));
     renderCartInWeb();
-  } 
-  if (listToCart[MinusProduct].quantity == 0) {
-    showDeleteMessage (posision)
+  }else if(listToCart[poisionMinusProduct].quantity == 0){
+      showDeleteMessage(poisionMinusProduct);
   }
-  
 }
-function showDeleteMessage (posision) {
+function showDeleteMessage(poisionMinusProduct) {
   document.getElementById("showDelete").style.display = "block";
+  console.log("vi tri la", poisionMinusProduct)
 }
 
 

@@ -70,8 +70,15 @@ margin: 10px 10px;
     flex-direction: column;
     width: 20%;
     border-right: 1px solid grey; 
-
-   
+}
+@media only screen and(max-width: 768px ) {
+    .display-img{
+        display: none;
+        
+    }
+    body{
+        color: #17a2b8;
+    }
 }
 .repo-product{
     margin: 20px auto 10px 20px;
@@ -126,4 +133,18 @@ th, td {
  tr:nth-child(odd){
     background-color: #0dcaf0;
     color: white;
+}
+.diplay-img__prd-table{
+    width: 100px;
+}
+.btn-edit,
+.btn-delete,
+.btn-btn-edit{
+    background-color: #17a2b8;
+    color: #f8f9fa;
+    border: none;
+    border-radius: 2px;
+}
+.button:hover{
+    opacity: 0.6;
 }

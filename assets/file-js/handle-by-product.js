@@ -6,6 +6,10 @@
 // }
 
 
+const VND = new Intl.NumberFormat("vi-VN", {
+  style: "currency",
+  currency: "VND",
+});
 
 let products = JSON.parse(localStorage.getItem("listProduct")) ? JSON.parse(localStorage.getItem("listProduct")) : [];
  
@@ -17,7 +21,7 @@ function render() {
       <div class="card-body">
         <h5 class="card-title">${products[i].name}</h5>
         <p class="card-text">${i}</p>
-        <p class="card-text">${products[i].price}</p>
+        <p class="card-text">${VND.format(products[i].price)}</p>
         <button class="btn btn-primary" onclick="handleBuyPoduct(${products[i].id})">BUY</button>
       </div>
     </div>`
@@ -40,27 +44,25 @@ function handleBuyPoduct(productId) {
     alert("chưa đăng nhập");
     return;
   }
- 
   const productFindById = products.find((production) => production.id == productId);
   if (!productFindById) {
     alert('Sản phẩm cần mua không nằm trong danh mục sản phâm được bán!')
     return;
   }
-  
   let checkProductionInCart = this.checkProductionInCart(productFindById.id, listToCart);
   if (checkProductionInCart) {
-    console.log(listToCart)
     alert(`sản phẩm ${productFindById.name} đã có trong giỏ hàng`)
     return
   }
   pushProductionInCart(productFindById);
 }
 // đẩy sản phẩm vào giỏ hàng
-
 let coutProduct = 0;
+console.log("iuetvn")
 function pushProductionInCart(productFindById) {
   listToCart.push(productFindById);
   coutProduct ++;
+  productFindById.quantity++;
   localStorage.setItem("listToCart", JSON.stringify(listToCart));
   document.getElementById("quantity").innerHTML = coutProduct;
 }
@@ -72,10 +74,10 @@ function checkProductionInCart(productId, listToCart) {
 //-----------------hiển thị phần tài khoản----------------
 let coutDiplayAccout = 0;
 function diplayAccout() {
-  coutDiplayAccout ++
+  coutDiplayAccout++
   if (coutDiplayAccout == 1) {
     document.getElementById("diplayAccout").style.display = "block"
-  } else if(coutDiplayAccout == 2){
+  } else if (coutDiplayAccout == 2) {
     document.getElementById("diplayAccout").style.display = "none"
     coutDiplayAccout = 0;
   }

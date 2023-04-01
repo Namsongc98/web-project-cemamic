@@ -36,25 +36,42 @@
           />
           <h5 class="title-logo">Phương Anh</h5>
         </div>
+        <!-- phần nav -->
         <nav class="header-nav">
           <ul class="header-nav__list">
             <li class="header-nav__item">
-              <a href="" class="header-nav__link">Trang chủ</a>
+              <a href="" class="header-nav__link hover-header">Trang chủ</a>
             </li>
             <li class="header-nav__item">
-              <a href="" class="header-nav__link">Menu</a>
+              <a href="" class="header-nav__link hover-header">Menu</a>
             </li>
             <li class="header-nav__item">
-              <a href="" class="header-nav__link">Kết nối</a>
+              <a href="" class="header-nav__link hover-header">Kết nối</a>
             </li>
             <li class="header-nav__item">
-              <a href="" class="header-nav__link">Event & New</a>
+              <a href="" class="header-nav__link hover-header">Event & New</a>
             </li>
           </ul>
         </nav>
+        <!-- phân icon -->
         <div class="header__right">
-          
-          <i class="fa-regular fa-user"></i>
+          <div class="head-user" onclick="diplayAccout()">
+            <i class="fa-regular fa-user"></i>
+            <h5 class="userDisplay" id="userDisplay"></h5>
+            <div class="wp-inforUser" id="diplayAccout">
+              <a href="/index-main/sign-in.html" class="inforUser-accout">
+                <i class="fa-regular fa-user"></i>
+                <span class="sign-in">Tài khoản</span>
+              </a>
+              <a
+                href="/index-main/sign-in.html"
+                class="sign-out inforUser-accout"
+              >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span class="sign-in">Đăng xuất</span>
+              </a>
+            </div>
+          </div>
           <a
             href="./cart.html"
             target="_blank"
@@ -62,7 +79,7 @@
             class="wp-quantity"
           >
             <i class="fa-solid fa-cart-shopping"></i>
-            <div class="quantity" id="quantity"></div>
+            <div class="quantity" id="quantity">0</div>
           </a>
         </div>
       </div>
@@ -111,23 +128,28 @@
                   id="image-display"
                   name="image"
                   class="file-img button"
-                 
                 />
               </div>
-              <button onclick="addProductRepo()" class="button-product">
-                Nhập
-              </button>
+              <div class="wp-getPrd">
+                <button onclick="addProductRepo()" class="button-product">
+                  Nhập
+                </button>
+              </div>
             </div>
           </div>
           <div class="display-img" id="display-img">
             <p class="title-img">Hình ảnh hiển thị sản phẩm</p>
-            <img src="" alt="" class="diplay-img__prd" id="diplay-img__prd"  multiple />
+            <img
+              src=""
+              alt=""
+              class="diplay-img__prd"
+              id="diplay-img__prd"
+              multiple
+            />
           </div>
         </div>
         <div class="wp-table">
-          <table id="tableInProduct" class="tableInContainer">
-           
-          </table>
+          <table id="tableInProduct" class="tableInContainer"></table>
         </div>
       </div>
     </div>

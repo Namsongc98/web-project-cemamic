@@ -30,54 +30,54 @@
             alt=""
             class="header__logo"
           />
-          <h3 class="title-logo">Phương Anh</h3>
+          <h5 class="title-logo">Phương Anh</h5>
         </div>
+        <!-- phần nav -->
         <nav class="header-nav">
           <ul class="header-nav__list">
             <li class="header-nav__item">
-              <a href="" class="header-nav__link">Trang chủ</a>
+              <a href="" class="header-nav__link hover-header">Trang chủ</a>
             </li>
             <li class="header-nav__item">
-              <a href="/index.html" class="header-nav__link">Menu</a>
+              <a href="../index.html" class="header-nav__link hover-header"
+                >Menu</a
+              >
             </li>
             <li class="header-nav__item">
-              <a href="" class="header-nav__link">Kết nối</a>
+              <a href="" class="header-nav__link hover-header">Kết nối</a>
             </li>
             <li class="header-nav__item">
-              <a href="" class="header-nav__link">Event & New</a>
+              <a href="" class="header-nav__link hover-header">Event & New</a>
             </li>
           </ul>
-          <div class="menu-nav">
-            <i class="fa-solid fa-bars"></i>
-            <span class="menu-header">Menu</span>
-            <ul class="header-menu__list">
-              <li class="header-menu__item">
-                <a href="" class="header-menu__link hover-header">Trang chủ</a>
-              </li>
-              <li class="header-menu__item">
-                <a href="" class="header-menu__link hover-header">Menu</a>
-              </li>
-              <li class="header-menu__item">
-                <a href="" class="header-menu__link hover-header">Kết nối</a>
-              </li>
-              <li class="header-menu__item">
-                <a href="" class="header-menu__link hover-header">Event & New</a>
-              </li>
-            </ul>
-          </div>
         </nav>
+        <!-- phân icon -->
         <div class="header__right">
-          
-          <i class="fa-regular fa-user"></i>
-          <h5 class="accoutUser"></h5>
+          <div class="head-user" onclick="diplayAccout()">
+            <i class="fa-regular fa-user"></i>
+            <h5 class="userDisplay" id="userDisplay"></h5>
+            <div class="wp-inforUser" id="diplayAccout">
+              <a href="/index-main/sign-in.html" class="inforUser-accout">
+                <i class="fa-regular fa-user"></i>
+                <span class="sign-in">Tài khoản</span>
+              </a>
+              <a
+                href="/index-main/sign-in.html"
+                class="sign-out inforUser-accout"
+              >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span class="sign-in">Đăng xuất</span>
+              </a>
+            </div>
+          </div>
           <a
-            href="./index-main/cart.html"
+            href="#"
             target="_blank"
             rel="noopener noreferrer"
             class="wp-quantity"
           >
             <i class="fa-solid fa-cart-shopping"></i>
-            <div class="quantity" id="quantity"></div>
+            <div class="quantity" id="quantity">0</div>
           </a>
         </div>
       </div>
@@ -85,14 +85,19 @@
     <main class="main">
       <div class="main-left">
         <h3 class="product-tite" id="quantity">Giỏ hàng của bạn</h3>
-        <p class="product-quantity" id="quantity">bạn đang có số sản phẩm là</p>
-        <div id="container-product">
+        <p class="product-quantity" id="quantity">Hóa đơn</p>
+
+        <div id="container-product" class="container-product">
           <!-- toat -->
           <!-- toat -->
+        </div>
+        <div class="wpTotal">
+          <h2 class="totalPrd" id="totalPrdBill"></h2>
         </div>
       </div>
       <div class="main-right">
         <div class="wpProduct" id="wpProductBag"></div>
+        
       </div>
     </main>
     <script src="../assets/file-js/cart-product.js"></script>

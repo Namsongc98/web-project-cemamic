@@ -5,16 +5,22 @@ function impClick(e) {
     let dataFormUser = JSON.parse(localStorage.getItem("dataFormUser")) || []
     let checkForm = dataFormUser.find((user) => user.email === stringEmail && user.passwword === stringPass)
     if (checkForm) {
-        localStorage.setItem("flagUser",1)
-       window.location.href = '/index.html';
-       localStorage.setItem("nameFormUser",checkForm.name)
-    } else {
-        localStorage.setItem("flagUser",0)
+        console.log("comin")
+        if (stringEmail == "namson@gmail.com" && stringPass == "nam") {
+           
+            window.location.href = "./addMin.html";
+        } else {
+            localStorage.setItem("flagUser", 1)
+            window.location.href = '/index.html';
+            localStorage.setItem("nameFormUser", checkForm.name)
+        }
 
-       signWrong()
+    } else {
+        localStorage.setItem("flagUser", 0)
+        signWrong()
     }
 }
-function  signWrong() {
+function signWrong() {
     document.getElementById("signWrong").style.display = "block";
     setTimeout(function () {
         document.getElementById("signWrong").style.display = "none";

@@ -40,7 +40,7 @@ function submidRegister() {
             sussec()
             localStorage.setItem("flagUser", 1)
             setTimeout(function () {
-                window.location.assign("/index.html");
+                window.location.assign("../index.html");
             }, 1000);
         };
     } else {

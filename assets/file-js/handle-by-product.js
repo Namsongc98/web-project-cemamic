@@ -12,7 +12,7 @@ const VND = new Intl.NumberFormat("vi-VN", {
 });
 //render sản phẩm
 let products = JSON.parse(localStorage.getItem("products"))
-console.log(products)
+
 function render() {
   for (let i = 0; i < products.length; i++) {
     let renderPro = `
@@ -22,7 +22,7 @@ function render() {
         <h5 class="card-title">${products[i].name}</h5>
         <p class="card-text">${i}</p>
         <p class="card-text">${VND.format(products[i].price)}</p>
-        <button class="btn btn-primary" onclick="handleBuyPoduct(${products[i].i})">BUY</button>
+        <button class="btn btn-primary" onclick="handleBuyPoduct(${products[i].id})">BUY</button>
       </div>
     </div>`
     document.getElementById("wpProduct").innerHTML += renderPro;
@@ -41,6 +41,7 @@ if (flagUser == 1) {
 let listToCart = JSON.parse(localStorage.getItem("listToCart")) || [];
 // ham xu ly mua san pham truyen tham so id san pham
 function handleBuyPoduct(productId) {
+  console.log(productId)
   if (dataFormUser == null) {
     alert("chưa đăng nhập");
     return;
@@ -64,7 +65,6 @@ let coutProduct = 0;
 function pushProductionInCart(productFindById) {
   listToCart.push(productFindById);
   coutProduct++;
-  productFindById.quantity++;
   localStorage.setItem("listToCart", JSON.stringify(listToCart));
   document.getElementById("quantity").innerHTML = coutProduct;
 }

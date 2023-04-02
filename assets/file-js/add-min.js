@@ -33,7 +33,7 @@ inputImg.onchange = function (event) {
 
 function createID() {
   Math.floor(Math.random() * 100000);
-  document.getElementById("id-prd").value = `CRM-${Math.floor(Math.random() * 100000)} `;
+  document.getElementById("id-prd").value = `${Math.floor(Math.random() * 100000)} `;
 };
 let imgProduct;
 // let products = JSON.parse(localStorage.getItem("listProduct"));
@@ -52,7 +52,7 @@ function addProductRepo() {
     id: idAddProduct,
     price: priceAddProduct,
     quantity: quantityAddProduct,
-    stt: 1++ ,
+    cout: 1,
   }
   let flagEditPrd = JSON.parse(localStorage.getItem("flagEditPrd"));
   if (!flagEditPrd == []) {

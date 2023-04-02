@@ -21,7 +21,7 @@ function renderCartInWeb() {
   let renderCart = ``;
   let totalProduct = 0;
   for (let i = 0; i < listToCarts.length; i++) {
-    let sumProduct = listToCart[i].quantity * listToCarts[i].price;
+    let sumProduct = listToCart[i].cout * listToCarts[i].price;
     totalProduct += sumProduct 
     renderCart += `
     <div class="conainer-product">
@@ -36,7 +36,7 @@ function renderCartInWeb() {
       <div class="bag-button-wp">
         <button class="bag-button" onclick="buttonMinus(${i})">-</button>
         <span class="product-number" id="quantity"
-          >${listToCart[i].quantity}</span
+          >${listToCart[i].cout}</span
         >
         <button class="bag-button" onclick="buttonPlus(${i})">+</button>
       </div>
@@ -61,14 +61,14 @@ function erase(poisionProduct) {
 }
 //cộng product
 function buttonPlus(poisionPlusProduct) {
-  listToCart[poisionPlusProduct].quantity++;
+  listToCart[poisionPlusProduct].cout++;
   localStorage.setItem("listToCart", JSON.stringify(listToCart));
   renderCartInWeb();
 }
 
 //giảm sản phẩm
 function buttonMinus(poisionMinusProduct) {
-  if (listToCart[poisionMinusProduct].quantity == 1) {
+  if (listToCart[poisionMinusProduct].cout == 1) {
     let confirmProduct = confirm("bạn muốn xóa");
     if (confirmProduct) {
       listToCart.splice(poisionMinusProduct, 1)
@@ -76,7 +76,7 @@ function buttonMinus(poisionMinusProduct) {
       return;
     }
   } else {
-    listToCart[poisionMinusProduct].quantity--;
+    listToCart[poisionMinusProduct].cout--;
     localStorage.setItem("listToCart", JSON.stringify(listToCart))
   }
   renderCartInWeb();

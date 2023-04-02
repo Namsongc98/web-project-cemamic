@@ -40,37 +40,36 @@ if (flagUser == 1) {
 //  render giỏ hành
 let listToCart = JSON.parse(localStorage.getItem("listToCart")) || [];
 // ham xu ly mua san pham truyen tham so id san pham
+let productFindById;
 function handleBuyPoduct(productId) {
-  console.log(productId)
   if (dataFormUser == null) {
     alert("chưa đăng nhập");
     return;
   }
-  const productFindById = products.find((production) => production.id == productId);
+  productFindById = products.find((production) => production.id == productId);
+
   if (!productFindById) {
     alert('Sản phẩm cần mua không nằm trong danh mục sản phâm được bán!')
     return;
   }
   let checkProductionInCart = this.checkProductionInCart(productFindById.id, listToCart);
   if (checkProductionInCart) {
-    alert(`sản phẩm ${productFindById.name} đã có trong giỏ hàng`)
+    myFunction()
     return
   }
-
+ 
   pushProductionInCart(productFindById);
 }
 // đẩy sản phẩm vào giỏ hàng
-let coutProduct = 0;
-// let quantityPrd = products.fine((prdfind) => prdfind.id )
 function pushProductionInCart(productFindById) {
+  ++productFindById.cout;
   listToCart.push(productFindById);
-  coutProduct++;
   localStorage.setItem("listToCart", JSON.stringify(listToCart));
-  document.getElementById("quantity").innerHTML = coutProduct;
+  document.getElementById("quantity").innerHTML = productFindById.cout;
 }
 function checkProductionInCart(productId, listToCart) {
   // function some build in trả về true hoặc false trả về true nếu đk trong call back là đúng
-  let check = listToCart.some((productInCart) => productInCart.id == productId);
+  let check = listToCart.some((productInCart) => productInCart.id == productFindById.id);
   return check;
 }
 //-----------------hiển thị phần tài khoản----------------
@@ -83,4 +82,11 @@ function diplayAccout() {
     document.getElementById("diplayAccout").style.display = "none"
     coutDiplayAccout = 0;
   }
+}
+
+// snackbar
+function myFunction() {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }

@@ -40,7 +40,7 @@ body {
 }
 
 .input-product {
-    width: 300px;
+    width: 20rem;
     outline: none;
     height: 2rem;
     border: 1px solid gainsboro;
@@ -57,13 +57,11 @@ body {
 }
 
 .main-prd {
-    width: 500px;
+    width: 34rem;
     background-color: #f8f9fa;
     padding: 16px;
     margin: 10px 50px;
     border-radius: 12px;
-
-
 }
 
 .file-img {
@@ -83,15 +81,27 @@ body {
     border-right: 1px solid grey;
 }
 
-@media only screen and(max-width: 768px) {
-    .display-img {
-        display: none;
-
-    }
-
+@media only screen and (max-width: 768px) {
+    
     body {
         color: #17a2b8;
     }
+    .wp-repoProduct{
+       display: block;
+
+    }
+    .wp-nav{
+        width: 100%;
+        flex-direction: row;
+        border-right: none;
+        border-bottom: 1px solid grey;
+        margin-bottom: 10px;
+    } 
+    .display-img {
+        display: block;
+
+    }
+   
 }
 
 .repo-product {
@@ -105,7 +115,7 @@ body {
 }
 
 .display-img {
-    width: 250px;
+    width: 15rem;
     height: 280px;
     margin: 20px auto auto 20px;
     border: 1px solid #ced4da;

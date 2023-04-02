@@ -1,6 +1,8 @@
+
+
+//hàm tạo email
 let dataFormUser = JSON.parse(localStorage.getItem("dataFormUser")) || [];
 function submidRegister() {
-    console.log("xác nhận")
     let fistName = document.getElementById("fistName").value;
     let lastName = document.getElementById("lastName").value;
     let emailInput = document.getElementById("signUp__email-input").value;
@@ -13,6 +15,7 @@ function submidRegister() {
         passwword: passwordInput,
         passwordAgain: passwordInputAgain,
     };
+    //hàm khong cho đăng nhập nếu không nhập j cả
     let chekHoll = Object.values(listForm);
     for (let i = 0; i < chekHoll.length; i++) {
         if (chekHoll[i] === "") {
@@ -20,6 +23,7 @@ function submidRegister() {
             return;
         }
     }
+    //hàm check email bao gồm nếu email trùng nhau phải có đuôi @gmail.com 
     let checkEmail = dataFormUser.some((user) => user.email === emailInput)
     if (checkEmail) {
         sameAccount();
@@ -47,6 +51,7 @@ function submidRegister() {
         checkEmailEnd();
     };
 }
+//hàm hiển thị password
 let cout = 0;
 let inputEye = document.getElementById("signUp__password-input")
 let eyeChane = document.getElementById("eye-signUp")
@@ -78,6 +83,7 @@ function eyeSignUpAgain(e) {
         cout = 0;
     }
 }
+//các hàm hiển thị thông báo nếu nhập không đuungs điều kiện
 function fullInfor() {
     document.getElementById("daydu").style.display = "block";
     setTimeout(function () {

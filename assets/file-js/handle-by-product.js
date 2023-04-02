@@ -5,14 +5,14 @@
 //   localStorage.setItem("listProduct", JSON.stringify(listProductDefind))
 // }
 
-
+//hàm nhận tiền vnd
 const VND = new Intl.NumberFormat("vi-VN", {
   style: "currency",
   currency: "VND",
 });
-
-let products = JSON.parse(localStorage.getItem("listProduct")) ? JSON.parse(localStorage.getItem("listProduct")) : [];
- 
+//render sản phẩm
+let products = JSON.parse(localStorage.getItem("products"))
+console.log(products)
 function render() {
   for (let i = 0; i < products.length; i++) {
     let renderPro = `
@@ -22,7 +22,7 @@ function render() {
         <h5 class="card-title">${products[i].name}</h5>
         <p class="card-text">${i}</p>
         <p class="card-text">${VND.format(products[i].price)}</p>
-        <button class="btn btn-primary" onclick="handleBuyPoduct(${products[i].id})">BUY</button>
+        <button class="btn btn-primary" onclick="handleBuyPoduct(${products[i].i})">BUY</button>
       </div>
     </div>`
     document.getElementById("wpProduct").innerHTML += renderPro;
@@ -32,10 +32,11 @@ render()
 // tên người đăng nhập
 let flagUser = JSON.parse(localStorage.getItem("flagUser")) || [];
 let dataFormUser = JSON.parse(localStorage.getItem("dataFormUser")) || [];
-let nameFormUser  = localStorage.getItem("nameFormUser") ||[];
- if( flagUser ==  1){
-   document.getElementById("userDisplay").innerHTML = nameFormUser;
- }
+
+if (flagUser == 1) {
+  let userWin = dataFormUser[0].name
+  document.getElementById("userDisplay").innerHTML = ` hello! ${userWin}`;
+}
 //  render giỏ hành
 let listToCart = JSON.parse(localStorage.getItem("listToCart")) || [];
 // ham xu ly mua san pham truyen tham so id san pham
@@ -54,14 +55,15 @@ function handleBuyPoduct(productId) {
     alert(`sản phẩm ${productFindById.name} đã có trong giỏ hàng`)
     return
   }
+
   pushProductionInCart(productFindById);
 }
 // đẩy sản phẩm vào giỏ hàng
 let coutProduct = 0;
-console.log("iuetvn")
+// let quantityPrd = products.fine((prdfind) => prdfind.id )
 function pushProductionInCart(productFindById) {
   listToCart.push(productFindById);
-  coutProduct ++;
+  coutProduct++;
   productFindById.quantity++;
   localStorage.setItem("listToCart", JSON.stringify(listToCart));
   document.getElementById("quantity").innerHTML = coutProduct;

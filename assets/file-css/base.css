@@ -60,7 +60,7 @@ body {
 }
 
 .header-wapper {
-    /* position: fixed; */
+    position: fixed;
     top: 0px;
     margin: 0 auto;
     z-index: 999;
@@ -71,9 +71,9 @@ body {
     max-width: 1320px;
     padding: 0 20px;
     background-color: #e6e7e9;
-    left: inherit;
-    right: inherit;
-    top: 0;
+    left: 0;
+    right: 0;
+    
 }
 
 .header-nav {

@@ -10,6 +10,8 @@ function diplayAccout() {
   }
 }
 
+
+
 //lấy  id thẻ img 
 let displayProduct = document.getElementById("diplay-img__prd");
 //lấy id thẻ thẻ input
@@ -23,32 +25,40 @@ inputImg.onchange = function (event) {
   reader.onload = function (event) {
     const dataUrl = event.target.result;
     // thiết lập nguồn url ảnh lên đối tượng 
-    displayProduct.src =URL.createObjectURL(dataUrl);
-    localStorage.setItem("dataUrl", dataUrl)
+    displayProduct.src = dataUrl;
 
   }
   reader.readAsDataURL(fileImg);
 }
-console.log(displayProduct.src)
-let addProduct = JSON.parse(localStorage.getItem("addProduct")) || [];
+
+function createID() {
+  Math.floor(Math.random() * 100000);
+  document.getElementById("id-prd").value = `CRM-${Math.floor(Math.random() * 100000)} `;
+};
+let imgProduct;
+// let products = JSON.parse(localStorage.getItem("listProduct"));
 let products = JSON.parse(localStorage.getItem("listProduct"));
+let addProduct = JSON.parse(localStorage.getItem("addProduct")) || [];
 function addProductRepo() {
   let nameAddProduct = document.getElementById("name-prd").value;
   let idAddProduct = document.getElementById("id-prd").value;
   let priceAddProduct = document.getElementById("price-prd").value;
   let quantityAddProduct = document.getElementById("prd-number").value;
-  let imgProduct = document.getElementById("diplay-img__prd").src;
+  imgProduct = document.getElementById("diplay-img__prd").src = `${displayProduct.src} `;
+  console.log(imgProduct)
   let listProductAdd = {
-    name : nameAddProduct,
-    img: imgProduct,
+    name: nameAddProduct,
+    image: imgProduct,
     id: idAddProduct,
     price: priceAddProduct,
     quantity: quantityAddProduct,
+    stt: 1++ ,
   }
-  let flagEditPrd = JSON.parse(localStorage.getItem("flagEditPrd")) ;
+  let flagEditPrd = JSON.parse(localStorage.getItem("flagEditPrd"));
   if (!flagEditPrd == []) {
-    addProduct.splice(flagEditPrd , 1, listProductAdd)
+    addProduct.splice(flagEditPrd, 1, listProductAdd)
     localStorage.removeItem("flagEditPrd")
+    localStorage.setItem("addProduct", JSON.stringify(addProduct));
     renderlistProductInContainer();
     return;
   }
@@ -56,11 +66,13 @@ function addProductRepo() {
     addProduct.push(listProductAdd);
     localStorage.setItem("addProduct", JSON.stringify(addProduct));
   } else {
+    console.log(listProductAdd)
     addProduct.push(listProductAdd);
     localStorage.setItem("addProduct", JSON.stringify(addProduct));
   }
   renderlistProductInContainer();
 }
+
 function renderlistProductInContainer() {
   let renderProduct = `
           <tr>
@@ -79,37 +91,55 @@ function renderlistProductInContainer() {
           <tr>
             <td>${i}</td>
             <td>${addProduct[i].name}</td>
-            <td><img src="${addProduct[i].image}" alt="" id="diplay-img__prd-table" class="diplay-img__prd-table"  ></td>
+            <td><img src="${addProduct[i].image}" alt="" id="diplay-img__prd-table" class="diplay-img__prd-table"  >
+            </td>
             <td>${addProduct[i].id}</td>
-            <td>${addProduct[i].price}</td>
+            <td>${addProduct[i].price}
+            </td>
             <td>${addProduct[i].quantity}</td> 
-            <td><button onclick="editProductInRepo(${i})" class="btn-edit button">Sửa</button></td> 
+            <td> <button onclick="editProductInRepo(${i})" class="btn-delete button">Sửa</button></td> 
             <td> <button onclick="deleteProductInRepo(${i})" class="btn-delete button">Xóa</button></td> 
             <td> <button onclick="addProductMenu(${i})" class="btn-btn-edit button">Thêm</button></td>
           </tr>
     `;
-
   }
   document.getElementById("tableInProduct").innerHTML = renderProduct;
+
+  cleanPrd()
+
+}
+function cleanPrd() {
   document.getElementById("name-prd").value = "";
   document.getElementById("id-prd").value = '';
   document.getElementById("price-prd").value = '';
   document.getElementById("prd-number").value = '';
-
+  document.getElementById("diplay-img__prd").src = "";
 }
+
 renderlistProductInContainer()
+
+//xóa sản phẩm
 function deleteProductInRepo(poisisionPrdDele) {
+  console.log("vet")
   addProduct.splice(poisisionPrdDele, 1)
   localStorage.setItem("addProduct", JSON.stringify(addProduct));
   renderlistProductInContainer()
 }
 // edit sản phẩm
 function editProductInRepo(poisisionPrdedit) {
-  document.getElementById("name-prd").value = addProduct[poisisionPrdedit].nameAddProduct;
-  document.getElementById("id-prd").value = addProduct[poisisionPrdedit].idAddProduct;
-  document.getElementById("price-prd").value = addProduct[poisisionPrdedit].priceAddProduct;
-  document.getElementById("prd-number").value = addProduct[poisisionPrdedit].quantityAddProduct;
-  localStorage.setItem("flagEditPrd",poisisionPrdedit)
+  console.log(addProduct[poisisionPrdedit].nameAddProduct)
+  document.getElementById("name-prd").value = addProduct[poisisionPrdedit].name;
+  document.getElementById("id-prd").value = addProduct[poisisionPrdedit].id;
+  document.getElementById("price-prd").value = addProduct[poisisionPrdedit].price;
+  document.getElementById("prd-number").value = addProduct[poisisionPrdedit].quantity;
+  localStorage.setItem("flagEditPrd", poisisionPrdedit)
 }
-
-
+// _____________________thêm sản phẩm _______________
+products = JSON.parse(localStorage.getItem("listProduct")) || [];
+addProduct = JSON.parse(localStorage.getItem("addProduct")) || [];
+console.log(addProduct)
+function addProductMenu(poisisionPrdMore) {
+  console.log(addProduct[poisisionPrdMore].id)
+  products.push(addProduct[poisisionPrdMore]);
+  localStorage.setItem("products", JSON.stringify(products));
+};

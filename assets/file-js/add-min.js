@@ -52,7 +52,7 @@ function addProductRepo() {
     id: idAddProduct,
     price: priceAddProduct,
     quantity: quantityAddProduct,
-    cout: 0,
+    cout: 1,
     keyemail: "",
   }
   let flagEditPrd = JSON.parse(localStorage.getItem("flagEditPrd"));
@@ -116,12 +116,9 @@ function cleanPrd() {
   document.getElementById("prd-number").value = '';
   document.getElementById("diplay-img__prd").src = "";
 }
-
 renderlistProductInContainer()
-
 //xóa sản phẩm
 function deleteProductInRepo(poisisionPrdDele) {
-
   addProduct.splice(poisisionPrdDele, 1)
   localStorage.setItem("addProduct", JSON.stringify(addProduct));
   renderlistProductInContainer()
@@ -136,11 +133,11 @@ function editProductInRepo(poisisionPrdedit) {
   localStorage.setItem("flagEditPrd", poisisionPrdedit)
 }
 // _____________________thêm sản phẩm _______________
+
 products = JSON.parse(localStorage.getItem("listProduct")) || [];
 addProduct = JSON.parse(localStorage.getItem("addProduct")) || [];
-
 function addProductMenu(poisisionPrdMore) {
-  console.log(addProduct[poisisionPrdMore].id)
   products.push(addProduct[poisisionPrdMore]);
   localStorage.setItem("products", JSON.stringify(products));
+  renderlistProductInContainer()
 };

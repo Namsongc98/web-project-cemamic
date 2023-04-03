@@ -2,6 +2,7 @@
 
 //hàm tạo email
 let dataFormUser = JSON.parse(localStorage.getItem("dataFormUser")) || [];
+let isLognIn =  JSON.parse(localStorage.getItem("isLognIn")) || [];
 function submidRegister() {
     let fistName = document.getElementById("fistName").value;
     let lastName = document.getElementById("lastName").value;
@@ -42,7 +43,7 @@ function submidRegister() {
             dataFormUser.push(listForm);
             localStorage.setItem("dataFormUser", JSON.stringify(dataFormUser));
             sussec()
-            localStorage.setItem("flagUser", 1)
+            localStorage.setItem("isLognIn", true)
             setTimeout(function () {
                 window.location.assign("../index.html");
             }, 1000);

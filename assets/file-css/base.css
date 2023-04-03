@@ -29,10 +29,9 @@ body {
 }
 
 .header__logo {
-    width: 60px;
+    width: 40px;
     display: block;
     margin: 0 auto;
-    background-color: #e6e7e9;
     background-color: #e6e7e9;
 }
 
@@ -40,24 +39,64 @@ body {
     .header-wapper {
         flex-wrap: wrap;
     }
+
     .header-wapper__logo {
         width: 100%;
         margin-bottom: 5px;
     }
-    .header__text {
-        display: flex;
-        overflow-x: scroll;
-        margin: 20px 80px;
-        height: 100px;
-        font-size: 1.2em;
-    }
-    .header-nav__list{
+
+    .header-nav__list {
         padding-left: 0px;
     }
-    .header-nav__link{
+
+    .header-nav__link {
         font-size: 12px;
     }
+
+    .header-nav {
+        display: none;
+
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    .header__logo {
+        width: 40px;
+    }
+
+    .header__right {
+        margin: 0;
+    }
 }
+
+@media only screen and (min-width: 769px) {
+    .reponsite-wpNav {
+        display: none;
+
+    }
+}
+
+.reponsite-wpNav {
+    position: relative;
+
+}
+
+.header-nav__reponsite {
+    position: absolute;
+    width: 160px;
+    height: 180px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.header-nav__item__reponsite {
+    list-style: none;
+    margin: 10px auto;
+}
+
+
 
 .header-wapper {
     position: fixed;
@@ -67,13 +106,13 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 100px;
+    min-height: 80px;
     max-width: 1320px;
     padding: 0 20px;
     background-color: #e6e7e9;
     left: 0;
     right: 0;
-    
+
 }
 
 .header-nav {
@@ -213,4 +252,79 @@ body {
 
 .card-title {
     height: 60px;
+}
+#inCart, 
+#havelist,
+#donAcout{
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color:#17a2b8;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 130px;
+}
+
+#inCart.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+#havelist.show {
+    visibility: visible; 
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+#donAcout.show {
+    visibility: visible; 
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+@-webkit-keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+    to {
+        top: 130px;
+        opacity: 1;
+    }
+}
+@keyframes fadein {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+    to {
+        top: 130px;
+        opacity: 1;
+    }
+}
+@-webkit-keyframes fadeout {
+    from {
+        top: 130px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
+}
+@keyframes fadeout {
+    from {
+        top: 130px;
+        opacity: 1;
+    }
+
+    to {
+        top: 0;
+        opacity: 0;
+    }
 }

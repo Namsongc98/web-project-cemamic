@@ -25,7 +25,10 @@
     <title>Phương Anh Gốm Shop</title>
   </head>
   <body>
-    <div id="snackbar">mowif </div>
+    <div id="inCart" >Sản phẩm đã nằm trong giỏ hàng</div>
+    <div id="havelist"  >Sản phẩm không nằm trong giỏ hàng</div>
+    <div id="donAcout"  >bạn chưa đăng nhập tài khoản</div>
+    
     <!-- phần header -->
     <header class="header">
       <div class="header-wapper">
@@ -41,19 +44,37 @@
         <nav class="header-nav">
           <ul class="header-nav__list">
             <li class="header-nav__item">
-              <a href="" class="header-nav__link hover-header">Trang chủ</a>
+              <a href="#" class="header-nav__link hover-header">Trang chủ</a>
             </li>
             <li class="header-nav__item">
-              <a href="" class="header-nav__link hover-header">Menu</a>
+              <a href="#c1" class="header-nav__link hover-header">Giới thiệu</a>
             </li>
             <li class="header-nav__item">
-              <a href="" class="header-nav__link hover-header">Kết nối</a>
+              <a href="#c2" class="header-nav__link hover-header">Kết nối</a>
             </li>
-            <li class="header-nav__item">
-              <a href="" class="header-nav__link hover-header">Event & New</a>
-            </li>
+           
           </ul>
         </nav>
+        <div class="reponsite-wpNav">
+          <div class="reponsite-wpNav-title" onclick="reponsiteNav()">
+            <i class="fa-solid fa-bars"></i>
+            <span class="reponsite-wpNav-title-menu" >Menu</span>
+          </div>
+          <nav class="header-nav__reponsite" id="nav__reponsite">
+            <ul class="header-nav__list__reponsite">
+              <li class="header-nav__item__reponsite">
+                <a href="#" class="header-nav__link hover-header">Trang chủ</a>
+              </li>
+              <li class="header-nav__item__reponsite">
+                <a href="#c1" class="header-nav__link hover-header">Giới thiệu</a>
+              </li>
+              <li class="header-nav__item__reponsite">
+                <a href="#c2" class="header-nav__link hover-header">Kết nối</a>
+              </li>
+             
+            </ul>
+          </nav>
+        </div>
         <!-- phân icon -->
         <div class="header__right">
           <div class="head-user" onclick="diplayAccout()">
@@ -67,6 +88,7 @@
               <a
                 href="/index-main/sign-in.html"
                 class="sign-out inforUser-accout"
+                id="sign-in__nav"
               >
                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 <span class="sign-in">Đăng xuất</span>
@@ -152,7 +174,7 @@
         </button>
       </div>
 
-      <p class="header__text">
+      <p class="header__text" id="c1">
         Gốm là một loại vật dụng, trong xây dựng công trình, dinh thự và ngay cả
         máng nước, vật gia dụng... đã hơn 25.000 năm, từ sau khi con người phát
         minh ra lửa và rời hang núi hốc đá, cất nhà ở để định cư. Người ta đề
@@ -192,43 +214,45 @@
         </div>
       </div>
     </main>
-    <footer class="footer">
-      
-        <ul class="body-footer__list">
-          <li class="body-footer__item">
-            <h4 class="title-footer__item text-footer" >CTNHH Phương Anh</h4>
-            <p class="text-footer__item text-footer">Có nhiều biến thể của các đoạn văn của vẻ ngoài thậm chí hơi đáng tin.  </p>
-            <div class="connec-logo">
+    <footer class="footer" id="c2">
+      <ul class="body-footer__list">
+        <li class="body-footer__item">
+          <h4 class="title-footer__item text-footer">CTNHH Phương Anh</h4>
+          <p class="text-footer__item text-footer">
+            Có nhiều biến thể của các đoạn văn của vẻ ngoài thậm chí hơi đáng
+            tin.
+          </p>
+          <div class="connec-logo">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-solid fa-envelope iconfooter"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-book iconfooter"></i>
+          </div>
+        </li>
+        <li class="body-footer__item">
+          <ul class="body-footer__wp">
+            <li class="body-item-infor text-footer contac-footer">
+              Kết nối mạng xã hội
+            </li>
+            <li class="body-item-infor text-footer">
+              <i class="fa-solid fa-location-dot text-footer more-contac"></i>
+              Tòa nhà sông đà
+            </li>
+            <li class="body-item-infor text-footer">
               <i class="fa-brands fa-facebook"></i>
-              <i class="fa-solid fa-envelope iconfooter"></i>
-              <i class="fa-brands fa-twitter"></i>  
-              <i class="fa-solid fa-book iconfooter"></i>
-
-            </div>
-          </li>
-          <li class="body-footer__item ">
-            <ul class="body-footer__wp">
-              <li class="body-item-infor text-footer contac-footer" >Kết nối mạng xã hội</li>
-              <li class="body-item-infor text-footer">
-                <i class="fa-solid fa-location-dot text-footer more-contac "></i>
-                Tòa nhà sông đà
-              </li>
-              <li class="body-item-infor text-footer">
-                <i class="fa-brands fa-facebook"></i>
-                Rekki-Academy
-              </li>
-              <li class="body-item-infor text-footer">
-                <i class="fa-solid fa-phone text-footer more-contac"></i>
-                012-345-6789
-              </li>
-              <li class="body-item-info text-footer">
-                <i class="fa-solid fa-envelope text-footer  more-contac"></i>
-                Rekki-Academy@gmail.com
-              </li>
-            </ul>
-          </li>
-        </ul>
-        
+              Rekki-Academy
+            </li>
+            <li class="body-item-infor text-footer">
+              <i class="fa-solid fa-phone text-footer more-contac"></i>
+              012-345-6789
+            </li>
+            <li class="body-item-info text-footer">
+              <i class="fa-solid fa-envelope text-footer more-contac"></i>
+              Rekki-Academy@gmail.com
+            </li>
+          </ul>
+        </li>
+      </ul>
     </footer>
     <script src="/assets/bootstrap-5.3.0-alpha2-dist/js/bootstrap.min.js"></script>
     <script src="./assets/file-js/handle-by-product.js"></script>

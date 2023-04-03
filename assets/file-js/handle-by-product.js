@@ -48,7 +48,6 @@ let dataFormUser = JSON.parse(localStorage.getItem("dataFormUser")) || [];
 let listToCart = JSON.parse(localStorage.getItem("listToCart")) || [];
 // ham xu ly mua san pham truyen tham so id san pham
 let productFindById;
-console.log(isLognIn)
 function handleBuyPoduct(productId) {
   if (isLognIn == null) {
     console.log("vào")
@@ -72,7 +71,6 @@ function handleBuyPoduct(productId) {
 function pushProductionInCart(productFindById) {
   listToCart.push(productFindById);
   localStorage.setItem("listToCart", JSON.stringify(listToCart));
-  
   plusCout();
 };
 function plusCout() {
@@ -116,4 +114,9 @@ function reponsiteNav() {
     document.getElementById("nav__reponsite").style.display = "none"
     coutNav = 0;
   }
+}
+
+function signIn() {
+  localStorage.removeItem("isLognIn");
+  window.location.href="./index-main/sign-in.html";
 }

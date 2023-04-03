@@ -28,6 +28,7 @@ function submidRegister() {
     let checkEmail = dataFormUser.some((user) => user.email === emailInput)
     if (checkEmail) {
         sameAccount();
+        
         return;
     }
     let checkGmail = document.getElementById("signUp__email-input").value;

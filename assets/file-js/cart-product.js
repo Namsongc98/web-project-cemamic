@@ -69,17 +69,28 @@ function buttonPlus(poisionPlusProduct) {
 //giảm sản phẩm
 function buttonMinus(poisionMinusProduct) {
   if (listToCart[poisionMinusProduct].cout == 1) {
-    let confirmProduct = confirm("bạn muốn xóa");
+    deleProductSnack();
     if (confirmProduct) {
       listToCart.splice(poisionMinusProduct, 1)
-      localStorage.setItem("listToCart", JSON.stringify(listToCart))
+      localStorage.setItem("listToCart", JSON.stringify(listToCart));
       return;
     }
   } else {
     listToCart[poisionMinusProduct].cout--;
-    localStorage.setItem("listToCart", JSON.stringify(listToCart))
-  }
+    localStorage.setItem("listToCart", JSON.stringify(listToCart));
+  };
   renderCartInWeb();
-}
+};
+
+function deleProductSnack() {
+  // Get the snackbar DIV
+  var x = document.getElementById("deleProductSnack");
+
+  // Add the "show" class to DIV
+  x.className = "show";
+
+  // After 3 seconds, remove the show class from DIV
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+};
 
 

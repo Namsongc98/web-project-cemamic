@@ -11,9 +11,9 @@ let coutDiplayAccout = 0;
 function diplayAccout() {
   coutDiplayAccout++
   if (coutDiplayAccout == 1) {
-    document.getElementById("diplayAccout").style.display = "block"
+    document.getElementById("diplayAccout").style.display = "block";
   } else if (coutDiplayAccout == 2) {
-    document.getElementById("diplayAccout").style.display = "none"
+    document.getElementById("diplayAccout").style.display = "none";
     coutDiplayAccout = 0;
   }
 }
@@ -23,7 +23,7 @@ const VND = new Intl.NumberFormat("vi-VN", {
   currency: "VND",
 });
 //render sản phẩm
-let products = JSON.parse(localStorage.getItem("products"))
+let products = JSON.parse(localStorage.getItem("products"));
 function render() {
   for (let i = 0; i < products.length; i++) {
     let renderPro = `
@@ -37,8 +37,8 @@ function render() {
       </div>
     </div>`
     document.getElementById("wpProduct").innerHTML += renderPro;
-  }
-}
+  };
+};
 render()
 // tên người đăng nhập
 let isLognIn = JSON.parse(localStorage.getItem("isLognIn"));
@@ -50,19 +50,18 @@ let listToCart = JSON.parse(localStorage.getItem("listToCart")) || [];
 let productFindById;
 function handleBuyPoduct(productId) {
   if (isLognIn == null) {
-    console.log("vào")
     donAcout();
     return;
   }
   productFindById = products.find((production) => production.id == productId);
   if (!productFindById) {
-    havelist()
+    havelist();
     return;
   }
   let checkProductionInCart = this.checkProductionInCart(productFindById.id, listToCart);
   if (checkProductionInCart) {
-    inCart()
-    return
+    inCart();
+    return;
   }
   pushProductionInCart(productFindById);
 
@@ -83,13 +82,16 @@ function checkProductionInCart(productId, listToCart) {
   // function some build in trả về true hoặc false trả về true nếu đk trong call back là đúng
   let check = listToCart.some((productInCart) => productInCart.id == productFindById.id);
   return check;
-}
+};
 
 if (isLognIn == true) {
   for (let i = 0; i < dataFormUser.length; i++) {
     document.getElementById("userDisplay").innerHTML = ` hello! ${dataFormUser[i].lastname}`;
-  }
-}
+  };
+};
+
+
+// snackbar
 function inCart() {
   var x = document.getElementById("inCart");
   x.className = "show";
@@ -115,7 +117,7 @@ function reponsiteNav() {
     coutNav = 0;
   }
 }
-
+// đăng xuất
 function signIn() {
   localStorage.removeItem("isLognIn");
   window.location.href="./index-main/sign-in.html";

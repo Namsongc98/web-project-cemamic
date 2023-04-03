@@ -2,7 +2,9 @@ body {
     min-height: 2000px;
     max-width: 1320px;
     margin: 0 auto;
+    border: 1px solid #ced4da;
 }
+
 .title-repo {
     display: block;
     margin: 30px auto;

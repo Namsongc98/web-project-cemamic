@@ -255,7 +255,8 @@ body {
 }
 #inCart, 
 #havelist,
-#donAcout{
+#donAcout,
+#deleProductSnack{
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
@@ -281,6 +282,11 @@ body {
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
   }
 #donAcout.show {
+    visibility: visible; 
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+#deleProductSnack.show {
     visibility: visible; 
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;

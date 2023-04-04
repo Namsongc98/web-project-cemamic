@@ -9,24 +9,15 @@ function diplayAccout() {
     coutDiplayAccout = 0;
   }
 }
-
-
-
-//lấy  id thẻ img 
+//hiển thị phần hình ảnh
 let displayProduct = document.getElementById("diplay-img__prd");
-//lấy id thẻ thẻ input
-//sự kiện chỉ đến phần tử gôc (file)
 const inputImg = document.getElementById("image-display");
-//lăng nghe sự kiện onchance từ input
 inputImg.onchange = function (event) {
   const fileImg = event.target.files[0];
-  // chuyển tai liệu thành dữ liệu uRL
   const reader = new FileReader();
   reader.onload = function (event) {
     const dataUrl = event.target.result;
-    // thiết lập nguồn url ảnh lên đối tượng 
     displayProduct.src = dataUrl;
-
   }
   reader.readAsDataURL(fileImg);
 }

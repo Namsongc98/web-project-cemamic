@@ -1,9 +1,3 @@
-// import { listProductDefind } from './constant.js';
-// console.log(listProductDefind);
-// let products = JSON.parse(localStorage.getItem("listProduct")) || [];
-// if (listProductDefind.length > 0 && products.length == 0) {
-//   localStorage.setItem("listProduct", JSON.stringify(listProductDefind))
-// }
 
 //-----------------hiển thị phần tài khoản----------------
 
@@ -120,5 +114,5 @@ function reponsiteNav() {
 // đăng xuất
 function signIn() {
   localStorage.removeItem("isLognIn");
-  window.location.href="./index-main/sign-in.html";
+  window.location.href="./index-main/register.html";
 }
